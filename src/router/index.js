@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home'//首页
 import HomePage from '@/components/homePage'//首页
-import Header from '@/components/Header'
+//import Header from '@/components/Header'
 import Nav from '@/components/Nav'
 import Questionnaire from '@/components/questionnaire'//问卷调查
 import SelectCity from '@/components/selectCity'//城市选择
@@ -27,11 +26,15 @@ import Discussion from '@/components/discussion'//讨论组详情
 import RouteChat from '@/components/routeChat'//行程详情
 import VisitChat from '@/components/visitChat'//到访详情
 import HomeDetail from '@/components/homeDetail'//房源详情页
+import Community from '@/components/community'//社区
+import MyLikeHome from '@/components/myLikeHome'//我喜欢的
+import Mine from '@/components/mine'//我的 个人中心
+import ChangePassword from '@/components/changePassword'//修改密码
 Vue.use(Router)
 
 export default new Router({
   routes: [
-  	{path:"/",redirect:"/home"},
+  	{path:"/",redirect:"/homePage"},
   	{
       path: '/questionnaire',
       name: 'questionnaire',
@@ -47,160 +50,118 @@ export default new Router({
    },{
       path: '/relationFD',
       name: 'relationFD',
-      components: {
-				default:RelationFD,
-				header:Header,
-			}
-   },{
-      path: '/home',
-      name: 'home',
-      components: {
-				default:Home,
-				header:Header,
-				nav:Nav
-			}
+      component:RelationFD
    },{
       path: '/homePage',
       name: 'homePage',
       components: {
 				default:HomePage,
-				header:Header,
+				nav:Nav
+			}
+   },{
+      path: '/mine',
+      name: 'mine',
+      components: {
+				default:Mine,
 				nav:Nav
 			}
    },{
       path: '/searchs',
       name: 'searchs',
-      components: {
-				default:Searchs,
-				header:Header,
-			}
+      component:Searchs
     },{
       path: '/journeyNews',
       name: 'journeyNews',
-      components: {
-				default:JourneyNews,
-				header:Header,
-			}
+      component:JourneyNews
    },{
       path: '/sultnews',
       name: 'sultnews',
-      components: {
-				default:Sultnews,
-				header:Header,
-			}
+      component: Sultnews
     },{
       path: '/message',
       name: 'message',
-      components: {
-				default:Message,
-				header:Header,
-			}
+      component: Message
     },{
       path: '/sultSetting',
       name: 'sultSetting',
-      components: {
-				default:SultSetting,
-				header:Header,
-			}
+      component: SultSetting
     },{
       path: '/asregards',
       name: 'asregards',
-      components: {
-				default:Asregards,
-				header:Header,
-			}
+      component: Asregards
     },{
       path: '/article',
       name: 'article',
-      components: {
-				default:Article,
-				header:Header,
-			}
+      component: Article
     },{
       path: '/journeyList',
       name: 'journeyList',
       components: {
 				default:JourneyList,
-				header:Header,
 				nav:Nav
 			}
     },{
       path: '/myVisit',
       name: 'myVisit',
-      components: {
-				default:MyVisit,
-				header:Header,
-			}
+      component:MyVisit
     },{
       path: '/feedback',
       name: 'feedback',
-      components: {
-				default:Feedback,
-				header:Header,
-			}
+      component:Feedback
     },{
       path: '/homeRegister',
       name: 'homeRegister',
-      components: {
-				default:HomeRegister,
-				header:Header,
-			}
+      component:HomeRegister
      },{
       path: '/myHome',
       name: 'myHome',
-      components: {
-				default:MyHome,
-				header:Header,
-			}
+      component: MyHome
     },{
       path: '/searchEnd',
       name: 'searchEnd',
-      components: {
-				default:SearchEnd,
-				header:Header,
-			}
+      component:SearchEnd
     },{
       path: '/amendHome',
       name: 'amendHome',
-      components: {
-				default:AmendHome,
-				header:Header,
-			}
+      component: AmendHome
     },{
       path: '/discussionList',
       name: 'discussionList',
       components: {
 				default:DiscussionList,
-				header:Header,
+				nav:Nav
 			}
     },{
       path: '/discussion',
       name: 'discussion',
-      components: {
-				default:Discussion,
-				header:Header,
-			}
+      component: Discussion
     },{
       path: '/routeChat',
       name: 'routeChat',
-      components: {
-				default:RouteChat,
-				header:Header,
-			}
+      component:RouteChat
     },{
       path: '/visitChat',
       name: 'visitChat',
-      components: {
-				default:VisitChat,
-				header:Header,
-			}
+      component:VisitChat
     },{
       path: '/homeDetail',
       name: 'homeDetail',
+      component: HomeDetail
+    },{
+      path: '/community',
+      name: 'community',
       components: {
-				default:HomeDetail,
-				header:Header,
+				default:Community,
+				nav:Nav
 			}
+    },{
+      path: '/myLikeHome',
+      name: 'myLikeHome',
+      component: MyLikeHome
+    },{
+      path: '/changePassword',
+      name: 'changePassword',
+      component: ChangePassword
     }
    
   ]

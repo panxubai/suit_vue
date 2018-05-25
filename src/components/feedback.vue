@@ -1,5 +1,13 @@
 <template>
 	<div class='container'>
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">消息</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class='feedMain'>
 			<div class='rentingWhat'>
 				<b>您遇到的问题类型</b>
@@ -65,6 +73,9 @@
 			}
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			rentingWhatTap: function(e) {
 				this.rentingIndex = e.target.dataset.index
 			}
@@ -78,7 +89,10 @@
 	.container {
 		padding-top: 0.88rem;
 	}
-	
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.feedMain {
 		width: 6.7rem;
 		margin: 0 auto;

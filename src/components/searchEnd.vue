@@ -3,10 +3,14 @@
 	<div class='container'>
 		<div class='screenEnd'>
 			<div class='searchsum' style="z-index:25;">
-				<router-link :to="{path:'searchs',query:{gid:1}}">
+				<div class="backsearch" @click="refresh">
+					<img src="../assets/image/ic_topbar_return.png" />
+				</div>
+				<router-link :to="{path:'searchs',query:{gid:2}}">
 					<div class='searchs'> {{addressEnd}}</div>
-					<img src='https://www.suitius.com/image/resources/ic_search_closs.png' />
 				</router-link>
+				<img class="chahaos" @click="eliminateTap" src='https://www.suitius.com/image/resources/ic_search_closs.png' />
+
 			</div>
 			<div class='screenMain' style="z-index:25;">
 				<div class="screenLeft" :class="selectIndex == 1? 'activeSolt' : ''" @click="soltTap">
@@ -102,7 +106,8 @@
 				soltMenuIsShow: false, //排序遮罩层
 				screenMenuIsShow: false, //筛选的遮罩层
 				selectIndex: 0, //点击排序和筛选
-				addressEnd: "请输入地址", //意见
+				addressEnd: "请输入地址", //地址*
+				addressType: "", //地址类型*
 				sortArr: ["综合", "价格", "便利", "舒适"],
 				soltIndex: 0,
 				compositeArr1: ["整租", "合租", "不限"],
@@ -119,8 +124,22 @@
 		},
 		created: function() {
 			that = this;
+			//用户选择地址
+			this.addressEnd = this.$route.query.text || "请输入地址";
+			this.addressType = this.$route.query.type || "";
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
+			//点击差号清空地址
+			eliminateTap: function() {
+				this.$router.replace({
+					path: '/searchEnd'
+				});
+				this.addressEnd = "请输入地址";
+				this.addressType = "";
+			},
 			//点击排序
 			soltTap: function() {
 				if(this.soltMenuIsShow) {
@@ -222,38 +241,50 @@
 	}
 </script>
 
-<style>
+<style style>
 	a {
 		text-decoration: none;
-	}
-	
-	.container {
-		padding-top: 0.88rem;
 	}
 	
 	.screenEnd {
 		width: 100%;
 		position: fixed;
-		top: 0.88rem;
+		top: 0;
 	}
 	
 	.searchsum {
 		width: 100%;
+		height: 0.84rem;
 		position: relative;
 		background: #fff;
+		padding: 0.1rem 0.3rem;
+		box-sizing: border-box;
 	}
 	
-	.searchsum img {
+	.searchsum .backsearch {
+		width: 0.48rem;
+		height: 0.48rem;
+		float: left;
+		margin-top: 0.1rem;
+	}
+	
+	.searchsum .backsearch img {
+		width: 0.48rem;
+		height: 0.48rem;
+		float: left;
+	}
+	
+	.searchsum .chahaos {
 		position: absolute;
 		width: 0.48rem;
 		height: 0.48rem;
-		top: 0.16rem;
+		top: 0.18rem;
 		right: 0.5rem;
 	}
 	
 	.searchsum .searchs {
-		width: 6.9rem;
-		height: 0.8rem;
+		width: 6.1rem;
+		height: 0.64rem;
 		background: #F8F8F8;
 		border-radius: 0.6rem;
 		margin: 0 auto;
@@ -261,8 +292,10 @@
 		font-size: 0.28rem;
 		color: #9B9B9B;
 		letter-spacing: 0;
-		line-height: 0.8rem;
-		text-align: center;
+		line-height: 0.64rem;
+		padding-left: 0.32rem;
+		box-sizing: border-box;
+		float: right;
 	}
 	
 	.screenMain {

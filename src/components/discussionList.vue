@@ -5,7 +5,14 @@
      <image src='../../resources/restImg/img_missing_card2.png'></image>
         <b>哦哟~列表为空</b>
     </div> -->
+		<div class="headerS">
+			<div class="backs">
+			</div>
+			<div class="headerTitle">讨论组</div>
+			<div class="information">
+		</div>
 
+		</div>
 		<div class='routeList'>
 			<mt-cell-swipe :right="[  
                 {  
@@ -59,6 +66,9 @@
 
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			deleteSection: function(item) {
 				console.log(item)
 			},
@@ -68,9 +78,10 @@
 </script>
 
 <style scoped>
-	a{
+	a {
 		text-decoration: none;
 	}
+	
 	.container {
 		position: absolute;
 		top: 0;
@@ -78,15 +89,18 @@
 		width: 100%;
 		height: 100%;
 		background: #eff3f6;
-		box-shadow: 0 4rem 8rem 0 rgba(0, 0, 0, 0.10) inset;
 		padding-top: 0.88rem;
+		padding-bottom: 0.98rem;
 		overflow: hidden;
 	}
-	
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.routeList {
 		width: 100%;
 		height: 2.12rem;
-		border-top: 1px solid #eff3f6;
+		border-bottom: 1px solid #eff3f6;
 		box-sizing: border-box;
 		background: #fff;
 		margin-bottom: 0.22rem;

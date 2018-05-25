@@ -1,5 +1,13 @@
 <template>
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">搜索</div>
+			<div class="information">
+		</div>
+		</div>
 		<!-- 搜索框 -->
 		<div class='searchPageSum'>
 			<div class='search_border'>
@@ -79,14 +87,17 @@
 		created() {
 			let that = this;
 			that.historySearchfun()
-			console.log(this.$route.query)
+			//console.log(this.$route.query.gid)
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//本地获取历史搜索
 			historySearchfun: function() {
 				let that = this;
 				var logs = JSON.parse(localStorage.getItem('historySearch')) || [];
-				console.log(logs)
+				//console.log(logs)
 				this.historySearch = logs
 
 			},
@@ -100,7 +111,24 @@
 			},
 			//选择要搜索的字段
 			bindtapa: function(e) {
-				//console.log(e.srcElement.dataset)
+				console.log(this.$route.query.gid);
+				if(this.$route.query.gid == 1){
+					this.$router.push({
+						path: '/',
+						query: {
+				           text: e.srcElement.dataset.text,
+							type: e.srcElement.dataset.type
+				          }
+					});
+				}else{
+					this.$router.push({
+						path: '/searchEnd',
+						query: {
+				           text: e.srcElement.dataset.text,
+							type: e.srcElement.dataset.type
+				          }
+					});
+				}
 				var logsArr = this.historySearch;
 				let data = {
 					text: e.srcElement.dataset.text,
@@ -130,7 +158,10 @@
 	.container {
 		padding-top: 0.88rem;
 	}
-	
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.searchPageSum {
 		width: 6.7rem;
 		margin: 0 auto;

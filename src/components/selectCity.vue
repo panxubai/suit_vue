@@ -1,5 +1,13 @@
 <template>
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">城市选择</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class="titleP">当前定位城市</div>
 		<div class="location">上海</div>
 		<div class="titleP">选择城市</div>
@@ -21,6 +29,9 @@
 			}
 		},
 		methods:{
+			refresh: function() {
+				window.history.go(-1)
+			},
 			getIndex:function(index){
 				this.cityIndexImg = index
 			}
@@ -32,8 +43,12 @@
 	.container {
 		width: 6.7rem;
 		margin: 0 auto;
+		padding-top: 0.88rem;
 	}
-	
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.container .titleP {
 		font-family: PingFangSC-Regular;
 		font-size: 0.36rem;

@@ -1,5 +1,14 @@
 <template>
 	<div class='container'> 
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">消息</div>
+			<div class="information">
+		</div>
+		</div>
+		
 <!--<div class='noHome' v-if="dataArr.length == 0">
      <img src='../assets/img_missing_card3.png'/>
         <b>哦哟~列表为空</b>
@@ -41,6 +50,25 @@
 </template>
 
 <script>
+	export default {
+
+		data() {
+			return {
+				
+			}
+		},
+
+		created: function() {
+
+		},
+		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
+			
+
+		}
+	}
 </script>
 
 <style scoped>
@@ -53,6 +81,10 @@
   background: #eff3f6;
 	padding-top: 0.88rem;
 	box-sizing: border-box;
+}
+.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
 }
 .routeList{
   border-top: 1px solid #eff3f6;

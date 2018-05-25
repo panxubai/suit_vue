@@ -1,5 +1,13 @@
 <template>
 	<div class='container'> 
+		<div class="headerS">
+			<div class="backs">
+				
+			</div>
+			<div class="headerTitle">消息</div>
+			<div class="information">
+		</div>
+		</div>
 <!--<div class='noHome' v-if="dataArr.length == 0">
      <img src='../assets/img_missing_card3.png'/>
         <b>哦哟~列表为空</b>
@@ -8,7 +16,10 @@
     
     <div class='routeList' > 
         <div class='routeTop'>
-            <img src='https://www.suitius.com/image/resources/img_suit_picture.png'/>
+        	<div class="routeTopImg">
+        		<img src='https://www.suitius.com/image/resources/img_suit_picture.png'/>
+        	</div>
+            
             <div class='routeRight'>
               <p>item.ward-iz想Z想Z想大大打折的tem.</p>
                 <!--<div class='routeBottomDs'>
@@ -48,7 +59,12 @@
   height: 100%;
   background: #eff3f6;
 	padding-top: 0.88rem;
+	padding-bottom: 0.98rem;
 	box-sizing: border-box;
+}
+.headerS{
+box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
 }
 .routeList{
   border-top: 1px solid #eff3f6;
@@ -66,15 +82,19 @@
   display: flex;
   border-bottom: 1px solid #E5E5E5;
 }
-.routeList .routeTop img{
-   width: 1.3rem;
+.routeList .routeTop .routeTopImg{
+	 width: 1.3rem;
   height: 1.3rem;
+}
+.routeList .routeTop img{
+   width: 100%;
+  height: 100%;
 }
 .routeList .routeTop .routeRight{
 	position: relative;
     margin-left: 0.32rem;
  height: 1.7rem; 
- width: 100%;
+ width: 5.4rem;
 }
 .routeList .routeBottomJj,.routeBottomDs,.routeBottomTy{
 position: absolute;

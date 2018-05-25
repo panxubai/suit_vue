@@ -1,5 +1,13 @@
 <template>
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">联系业主</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class='fdEndBox'>
 			<div class='searchEndList'>
 				<div class='leftImg'>
@@ -126,6 +134,9 @@
 			this.pickData2.pData1 = hoursArr(0)
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//点击选择时间
 			timeTap: function() {
 				this.show1 = true;
@@ -264,6 +275,10 @@ if(i == 0){
 	.container{
 		padding-top: 0.88rem;
 	}
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	a{
 		text-decoration: none;
 	}
@@ -464,15 +479,15 @@ if(i == 0){
 	}
 	
 	.sumitBtn {
-		width: 6.7rem;
-		height: 0.8rem;
+		width: 100%;
+		height: 0.98rem;
 		background: #F5A623;
-		border-radius: 0.6rem;
-		margin: 0.64rem auto;
-		font-size: 0.28rem;
+		font-size: 0.36rem;
 		color: #FFFFFF;
 		text-align: center;
-		line-height: 0.8rem;
+		line-height: 0.98rem;
+		position: fixed;
+		bottom: 0;left: 0;
 	}
 	
 	.dialog-mask {

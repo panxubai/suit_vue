@@ -1,5 +1,13 @@
 <template>
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">消息</div>
+			<div class="information">
+		</div>
+		</div>
 		<!--轮播-->
 		<div class="swipeDiv">
 			<mt-swipe ref="swipe" :auto="4000" :speed="500">
@@ -457,6 +465,9 @@
 
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//租房状态
 			leftSelectTap: function() {
 				this.showDiv1 = true;
@@ -601,8 +612,12 @@
 	
 	.container {
 		padding-top: 0.88rem;
+		
 	}
-	
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.swipeDiv {
 		height: 4.22rem;
 		width: 100%;

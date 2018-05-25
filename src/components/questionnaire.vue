@@ -1,6 +1,14 @@
 <template>
 	<!--pages/questionnaire/questionnaire.wxml-->
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">问卷调查</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class='backTop'>
 			<img src='https://www.suitius.com/image/resources/questionnaire/ic_boy_back.png' />
 			<p> SUIT是为了解决业主出租房和客户租房问题而诞生的。若你想体验更有效的服务,请花点时间填写以下内容。</p>
@@ -157,6 +165,9 @@
 			}
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//点击选择生日
 			birthdayTap: function() {
 				this.show1 = true;
@@ -221,6 +232,10 @@
 
 <style scoped>
 	/* pages/questionnaire/questionnaire.wxss */
+	.container{
+		padding-top: 0.88rem;
+	}
+
 	.backTop {
 		width: 100%;
 		height: 3.5rem;

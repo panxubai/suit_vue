@@ -1,5 +1,14 @@
 <template>
 	<div class='container'>
+		
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">系统消息</div>
+			<div class="information">
+		</div>
+		</div>
      <div class='newsList'>
         <div class='keyList' >
             <div class='imgs'>
@@ -31,7 +40,9 @@
     }
   },
   methods:{
-
+refresh: function() {
+				window.history.go(-1)
+			},
   }
 }
 </script>
@@ -40,6 +51,11 @@
 .container{
   width: 100%;
 	padding-top: 0.88rem;
+}
+
+.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
 }
 .newsList{
   width: 100%;
@@ -76,7 +92,7 @@ font-weight: 400;
 .keyList .newsBox b{
    display: block;
   font-size: 0.24rem;
-  margin: 0.08rem 0;
+  margin: 0.08rem 0 0.2rem;
 color: #C0C0C0;
 }
 .keyList .newsBox span{

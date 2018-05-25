@@ -1,5 +1,13 @@
 <template>
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">我的房屋</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class='fdEndBox'>
 			<div class='searchEndList'>
 				<div class='leftImg'>
@@ -25,6 +33,25 @@
 </template>
 
 <script>
+		export default {
+
+		data() {
+			return {
+				
+			}
+		},
+
+		created: function() {
+
+		},
+		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
+			
+
+		}
+	}
 </script>
 
 <style scoped>
@@ -34,6 +61,10 @@
 	.container{
 		padding-top: 0.88rem;
 	}
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.fdEndBox {
 		width: 100%;
 		border-bottom: 1px solid #E5E5E5;

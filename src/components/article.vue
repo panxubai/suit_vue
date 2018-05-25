@@ -1,5 +1,13 @@
 <template>
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">攻略贴士</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class='articleMain' @click="containerTap">
 			<div class='headline'>
 				contentMain.title
@@ -79,6 +87,9 @@
 
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//点击数去评论
 			commentTap: function() {
 				this.commentShow = false;
@@ -126,9 +137,12 @@
 
 <style scoped>
 	.container {
-		padding: 0.88rem 0;
+		padding-top: 0.88rem;
 	}
-	
+	.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 	.articleMain {
 		width: 100%;
 	}

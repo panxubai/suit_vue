@@ -1,18 +1,27 @@
 <template>
 	<!--pages/questionnaire/questionnaire.wxml-->
 	<div class="container">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">个人资料</div>
+			<div class="information">
+		</div>
+		</div>
 		<div class='topPhoto'>
         <div class='images' >
            <!--bindtap='photoTap' <image class='absoloatImg' src='../../resources/restImg/ic_user_camera.png'></image> -->
-			<img src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTILaybAfrFF6Dz3xicIQVFJCAhK1JW4z6QwxnlmibS43MTEZbJWWJhDT5D6PQicRmrht9pUz5qn3eyqQ/0' />
+           <img class="absoloatImg" src="../assets/image/ic_user_camera.png"/>
+			<img  class='headImg' src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTILaybAfrFF6Dz3xicIQVFJCAhK1JW4z6QwxnlmibS43MTEZbJWWJhDT5D6PQicRmrht9pUz5qn3eyqQ/0' />
         </div>
-        <!-- <text>点击更换头像</text> -->
+        <b>点击更换头像</b> 
     </div>
 	
 		<div class='questMain'>
 			<div class='schools'>
                 <p>昵称</p>
-                <input type='text' placeholder='请填写昵称' disabled v-model="nicknameVal"/>
+                <input type='text' placeholder='请填写昵称' v-model="nicknameVal"/>
             </div>
 			<div class='birthday'>
 				<p>生日</p>
@@ -155,6 +164,9 @@
 			}
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//点击选择生日
 			birthdayTap: function() {
 				this.show1 = true;
@@ -218,26 +230,52 @@
 
 <style scoped>
 	/* pages/questionnaire/questionnaire.wxss */
+	.container{
+ padding-top: 0.88rem;
+}
+.headerS{
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+
+}
 .topPhoto{
   width: 100%;
   height: 3.32rem;
   text-align: center;
   padding-top: 0.64rem;
   box-sizing: border-box;
+  font-size: 0;
 }
 .topPhoto .images{
   width: 1.60rem;
   height: 1.60rem;
   margin: 0 auto;
   position: relative;
+
 }
-.topPhoto .images img{
+.topPhoto b{
+	display: block;
+	text-align: center;
+	font-family: PingFangSC-Regular;
+	margin-top: 0.2rem;
+	  font-size: 0.24rem;
+color: #9B9B9B;
+}
+.topPhoto .images .headImg{
   width: 1.60rem;
   height: 1.60rem;
   border-radius: 50%;
   z-index: 10;
 }
-
+.topPhoto .images .absoloatImg{
+	width: 0.58rem;
+	height: 0.48rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
 	
 	.questMain {
 		width: 5.9rem;
