@@ -2,8 +2,8 @@
 	<div class="container">
 		<!--轮播-->
 		<div class="swipeDiv">
-			<img class="backImg" src="../assets/image/ic_topbar_return_w.png" />
-			<img class="fenxiangImg" src="../assets/image/ic_topbar_transpond_w.png" />
+			<img class="backImg" @click="refresh" src="../assets/image/ic_topbar_return_w.png" />
+			<img class="fenxiangImg" @click="shareOpen" src="../assets/image/ic_topbar_transpond_w.png" />
 			<mt-swipe ref="swipe" :auto="4000" :show-indicators="false" @change="handleChange">
 				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" /></mt-swipe-item>
 				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" /></mt-swipe-item>
@@ -141,13 +141,45 @@
 				<img v-else src="../assets/image/tabbar_ic_heart_h2.png"/>
 				<p></p>
 			</div>
-			<div class="relationFd">
+			<div class="relationFd" @click="relationTap">
 				联系业主
 			</div>
-			<div class="contract">
+			<div class="contract" @click="linkContract">
 				线上签约
-			</div>
-			
+			</div>	
+		</div>
+		
+		<!--分享功能-->
+		<div class='tipsWindown' v-show="shareShow" @click="shareClose"></div>
+		<div class="shareGn">
+			<img class='chahao' @click="shareClose" src='https://www.suitius.com/image/resources/homeDetail/ic_pop_close.png'/>
+			<p>分享房屋</p>
+			<ul>
+				<li>
+					<img src="../assets/image/ic_login_wechat.png"/>
+					<span>微信好友</span>
+				</li>
+				<li>
+					<img src="../assets/image/ic_login_wechat.png"/>
+					<span>微信好友</span>
+				</li>
+				<li>
+					<img src="../assets/image/ic_login_wechat.png"/>
+					<span>微信好友</span>
+				</li>
+				<li>
+					<img src="../assets/image/ic_login_wechat.png"/>
+					<span>微信好友</span>
+				</li>
+				<li>
+					<img src="../assets/image/ic_login_wechat.png"/>
+					<span>微信好友</span>
+				</li>
+				<li>
+					<img src="../assets/image/ic_login_wechat.png"/>
+					<span>微信好友</span>
+				</li>
+			</ul>
 		</div>
 
 		<!-- 点击问号跳出弹出框 -->
@@ -203,6 +235,7 @@
 				ageLitterValue: "",//年龄
 				ageBigValue: "",//年龄
 				activeIndex:1,//swper当前索引
+				shareShow:false,//分享功能
 			}
 		},
 		mounted() {
@@ -233,6 +266,9 @@
  			console.log(this.$refs.swipe.index)
 		},
 		methods: {
+			refresh: function() {
+				window.history.go(-1)
+			},
 			//轮播索引
 			 handleChange:function(index){
 			 	this.activeIndex = index+1;
@@ -269,6 +305,25 @@
 			//点击选择宠物
 			petTap: function(val) {
 				this.petIndex = val
+			},
+			//打开分享
+			shareOpen:function(){
+				this.shareShow = true;
+				$('.shareGn').animate({
+						bottom: '0'
+				},200)
+			},
+			//关闭分享
+			shareClose:function(){
+				this.shareShow = false;
+				$('.shareGn').animate({
+						bottom: '-6rem'
+				},200)
+			},
+			//点击线上签约
+			linkContract:function(){
+				console.log(321312)
+				this.$router.push({path:'/linkContract'});
 			},
 			//收藏房源
 			enshrineTap:function(){
@@ -947,5 +1002,41 @@ color: #555555;
 		color: #fff;
 		line-height: 0.98rem;
 		background: #F5A623;
+	}
+	.shareGn{
+		width: 100%;
+		height: 6rem;
+		background: #FFF;
+		position: fixed;
+		bottom:-6rem;
+		left: 0;
+		z-index: 99;
+	}
+	.shareGn p{
+		font-size: 0.32rem;
+		color: #9B9B9B;
+		line-height: 0.9rem;
+		margin-left: 0.4rem;
+	}
+	.shareGn ul{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.shareGn ul li{
+		width: 33.3%;
+		margin-top: 0.7rem;
+		text-align: center;
+	}
+	.shareGn ul li img{
+		height: 1rem;
+		width: 1rem;
+	}
+	.shareGn ul li span{
+		display: block;
+		margin-top: 0.15rem;
+		text-align: center;
+		font-size: 0.28rem;
+color: #4A4A4A;
 	}
 </style>

@@ -252,6 +252,7 @@
 <script>
 	var that;
 	import VuePickers from 'vue-pickers';
+	import eventVue from '../../static/js/eventVue.js'
 	import Vue from 'vue';
 	export default {
 		components: {
@@ -259,7 +260,7 @@
 		},
 		data() {
 			return {
-				showDiv1: false, //时间小
+				showDiv1: false, //遮罩层
 				show1: false, //时间小
 				show2: false, //租房状态
 				show3: false, //租房状态
@@ -435,8 +436,18 @@
 		created: function() {
 			that = this;
 			//用户选择地址
-			this.addressId = this.$route.query.text || "您想住哪里";
-			this.addressType = this.$route.query.type || "";
+			console.log(this.$route)
+			this.addressId = this.$route.params.text || "您想住哪里";
+			this.addressType = this.$route.params.type || "";
+			//console.log(localStorage.getItem('routerHome'))
+			if(localStorage.getItem('routerHome') == 1){//1我是业主
+				this.Rentin = false;
+				this.landlord = true;
+			}else{
+				return;
+			}
+		},
+		mounted(){
 		},
 		methods: {
 			//点击消息
@@ -452,6 +463,8 @@
 				} else {
 					this.Rentin = true;
 					this.landlord = false;
+					eventVue.$emit("userDefinedEvent",0)
+					localStorage.setItem('routerHome',0)//控制导航和首页显示
 				}
 			},
 			//点击我是房东
@@ -461,6 +474,9 @@
 				} else {
 					this.Rentin = false;
 					this.landlord = true;
+					this.ownerFirstShow = true;
+					eventVue.$emit("userDefinedEvent",1)
+					localStorage.setItem('routerHome',1)
 				}
 			},
 			//点击进入搜索结果
@@ -511,10 +527,12 @@
 					});
 				} else if(val == 2) {
 					this.$router.push({
-						path: '/myhome'
+						path: '/myHome'
 					});
 				} else if(val == 3) {
-
+					this.$router.push({
+						path: '/auditStatus'
+					});
 				}
 
 			},

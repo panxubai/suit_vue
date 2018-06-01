@@ -36,13 +36,12 @@
 				</p>
 				<div class='chumList'>
 					<div class="scrollGd">
-						
-						
 						<div class='headList'>
 							<img src='../assets/ic_user_camera.png' class='images'/>
-							<img class='delImg' src='https://www.suitius.com/image/resources/ic_search_closs.png'/>
+							<!--<img class='delImg' src='https://www.suitius.com/image/resources/ic_search_closs.png'/>-->
 						</div>
 						<div class='tapPhoto'>
+							<input type="file" v-on:change='previewFile' />
 							<img class='absoloatImg' src='../assets/ic_user_camera.png' />
 						</div>
 					
@@ -78,6 +77,9 @@
 			},
 			rentingWhatTap: function(e) {
 				this.rentingIndex = e.target.dataset.index
+			},
+			previewFile: function(e) { 
+				console.log(e)
 			}
 		}
 	}
@@ -223,6 +225,13 @@
 		display: inline-block;
 	}
 	
+	.homeImg .tapPhoto input{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 100;
+	}
 	.homeImg .tapPhoto .absoloatImg {
 		width: 0.58rem;
 		height: 0.48rem;
@@ -232,7 +241,7 @@
 		right: 0;
 		bottom: 0;
 		margin: auto;
-		z-index: 999;
+		z-index: 99;
 	}
 	
 	.inputBox {

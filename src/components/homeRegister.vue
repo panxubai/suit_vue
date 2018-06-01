@@ -59,12 +59,12 @@
 			</div>
 			<div class='fillList fillPhoto'>
 				<img src='../assets/ic_landlord_phone.png' />
-				<input type='number' placeholder='请输入手机号' v-on:input="photoInput" v-model="photoNumber" maxlength='11' placeholder-style="color:#9B9B9B" />
+				<input type='number' placeholder='请输入手机号' v-on:input="photoInput" v-model="photoNumber" oninput='if(value.length>11)value=value.slice(0,11)' maxlength='11' placeholder-style="color:#9B9B9B" />
 				<div class="codeTap" :class="photoTap?'activeCode':''" @click="gainCodeTap">{{codeText}}</div>
 			</div>
 			<div class='fillList fillCode'>
 				<img src='../assets/ic_landlord_verify.png' />
-				<input type='number' placeholder='验证码' v-model="codeNumber" maxlength='6' placeholder-style="color:#9B9B9B" />
+				<input type='number' placeholder='验证码' v-model="codeNumber" maxlength='6' oninput='if(value.length>6)value=value.slice(0,6)' placeholder-style="color:#9B9B9B" />
 			</div>
 
 			<div class='btnSumTap'>提交</div>

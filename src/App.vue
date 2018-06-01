@@ -201,4 +201,7 @@ export default {
   }
 
 }
+.mint-msgbox-confirm{
+	color: #FE8B25;
+}
 </style>

@@ -31,7 +31,7 @@
 		</div>
 
 		<div class='visitTime'>
-			<div class='visitMain'>
+			<div class='visitMain' :style="{ 'height': refuseShow ? '3.3rem' : '2rem' }">
 				<p>到访时间</p>
 				<div class='timeEnd'>
 					<img src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony20.png' />
@@ -44,18 +44,18 @@
 	                <img class='images' src='../assets/ic_suite_phone.png'/>
 	                <b>{{dataArr.n</b>
 	                <div class='phoneFs'>
-	                <span>发送</span>
-	                <img src='../assets/ic_suite_phone.png'/>
+		                <span>发送</span>
+		                <img src='../assets/ic_suite_phone.png'/>
 	               </div>
 	            </div> 
-				<div class='select'>
+				<div class='select' v-show="refuseShow">
 					<div class='refuse' @click="refuseTap">拒绝</div>
-					<div class='consent'>同意</div>
+					<div class='consent' @click="consentTap">同意</div>
 				</div>
 			</div>
 		</div>
 		<!--------------------->
-		<div class='chatBoxes'>
+		<div class='chatBoxes' :style="{ 'height': refuseShow ? '4.5rem' : '5.8rem' }">
 			<div class="scroll_y">
 				<!-- 本人的聊天 -->
 				<div>
@@ -121,22 +121,31 @@
 			return {
 				mainInput: "",
 				questionShow: false,
-				showNumber: 1
+				showNumber: 1,
+				refuseShow:true,//点击同意和拒绝之后隐藏
 			}
 		},
 		methods: {
 			refresh: function() {
 				window.history.go(-1)
 			},
+			//点击拒绝
 			refuseTap: function() {
 				this.questionShow = true
 			},
+			//点击同意
+			consentTap: function() {
+				this.refuseShow = false;
+			},
+			//关闭拒绝原因
 			hidenTipTap: function() {
 				this.questionShow = false
 			},
+			//选择拒绝原因
 			elsectTap: function(val) {
 				this.showNumber = val
-			}
+			},
+			
 		}
 	}
 </script>
@@ -252,7 +261,6 @@
 	
 	.visitTime .visitMain {
 		width: 6.9rem;
-		height:3.3rem;
 		margin: 0 auto;
 		border-bottom: 1px solid #E5E5E5;
 	}
@@ -389,7 +397,6 @@ color: #9B9B9B;
 	
 	.chatBoxes {
 		width: 6.9rem;
-		height: 4.5rem;
 		margin: 0 auto;
 		overflow-y: auto;
 	}

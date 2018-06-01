@@ -21,7 +21,7 @@
                     handler: () => deleteSection(1)  
                 }  
             ]">
-				<div class='routeTop'>
+				<div class='routeTop' @click="routerLink">
 					<div v-if="itemArr.length == 2" class="imgsum imgsumtwo">
 						<img v-for="item in itemArr" :src='item' />
 					</div>
@@ -72,7 +72,11 @@
 			deleteSection: function(item) {
 				console.log(item)
 			},
-
+			routerLink: function() {
+				this.$router.push({
+						path: '/discussion'
+					});
+			},
 		}
 	}
 </script>
@@ -83,15 +87,15 @@
 	}
 	
 	.container {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: #eff3f6;
-		padding-top: 0.88rem;
-		padding-bottom: 0.98rem;
-		overflow: hidden;
+		 position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #eff3f6;
+	padding-top: 0.88rem;
+	padding-bottom: 0.98rem;
+	box-sizing: border-box;
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);

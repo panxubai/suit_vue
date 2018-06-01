@@ -5,7 +5,7 @@
 				<img src="../assets/image/ic_landlord_bag5.png" />
 			</div>
 			<div class="headerTitle">我的</div>
-			<div class="information">
+			<div class="information" @click="tapMessage">
 				<img src="../assets/image/ic_landlord_bag3.png" />
 			</div>
 		</div>
@@ -19,55 +19,47 @@
 		</div>
 		<div class='mine_top' v-else>
 			<img class='headImg' src="../assets/img_suit_picture.png" />
-			<div class="buttonLogin">
+			<div class="buttonLogin" @click="loginGo">
 				登陆/注册
 			</div>
 		</div>
 		<div class='mine_bottom'>
-			<div class='mine_list'>
+			<div class='mine_list' @click="personalTap" >
 				<img class='icon' src='../assets/image/ic_landlord_bag2.png' />
 				<b>个人资料</b>
 				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
 			</div>
-			<div class='mine_list'>
-				<img class='icon' src='../assets/image/ic_landlord_bag3.png' />
-				<b>我的消息</b>
+			<div class='mine_list' @click="iLoveIs">
+				<img class='icon' src='../assets/image/me_ic_heart.png' />
+				<b>我喜欢的</b>
 				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
-				<img class='icon' src='../assets/image/ic_set_about3.png' />
-				<b>我的行程</b>
-				<a></a>
+				<img class='icon' src='../assets/image/me_ic_hetong.png' />
+				<b>我的合同</b>
+				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+			</div>
+			<div class='mine_list'>
+				<img class='icon' src='../assets/image/me_ic_hetong.png' />
+				<b>合同管理</b>
+				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+			</div>
+			<div class='mine_list'>
+				<img class='icon' src='../assets/image/me_ic_shouyi.png' />
+				<b>收益管理</b>
+				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+			</div>
+			<div class='mine_list'>
+				<img class='icon' src='../assets/image/me_ic_zhangdan.png' />
+				<b>账单支付</b>
 				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
 				<img class='icon' src='../assets/image/ic_set_about1.png' />
-				<b>我的讨论组</b>
-				<a></a>
+				<b>家政服务</b>
 				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
 			</div>
-			<div class='mine_list'>
-				<img class='icon' src='../assets/image/ic_set_about3.png' />
-				<b>我的到访</b>
-				<a></a>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
-			</div>
-			<div class='mine_list'>
-				<img class='icon' src='../assets/image/ic_landlord_bag1.png' />
-				<b>我的卡包</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
-			</div>
-
-			<div class='mine_list'>
-				<img class='icon' src='../assets/image/ic_landlord_hous.png' />
-				<b>我的房屋</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
-			</div>
-			<div class='mine_list'>
-				<img class='icon' src='../assets/image/ic_landlord_bag5.png' />
-				<b>系统设置</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
-			</div>
+		
 		</div>
 	</div>
 </template>
@@ -78,17 +70,48 @@
 		data() {
 			return {
 				whatLogin:false,//是否登陆
+				showTab:0,//0代表租客 1代表房东
 			}
 		},
 
 		created: function() {
+			if(localStorage.getItem('routerHome') == 1){
+				this.showTab = 1
+			}else{
+				this.showTab = 0
+			}
 
 		},
 		methods: {
 			refresh: function() {
-				window.history.go(-1)
+				this.$router.push({
+					path: '/sultSetting'
+				});
 			},
-			
+			//点击消息
+			tapMessage: function() {
+				this.$router.push({
+					path: '/message'
+				});
+			},
+			//惦记我喜欢的
+			iLoveIs:function(){
+				this.$router.push({
+					path: '/myLikeHome'
+				});
+			},
+//			/个人资料
+			personalTap:function(){
+				this.$router.push({
+					path: '/personalData'
+				});
+			},
+			//去登陆
+			loginGo:function(){
+				this.$router.push({
+					path: '/login'
+				});
+			},
 
 		}
 	}

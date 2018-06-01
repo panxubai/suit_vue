@@ -72,6 +72,7 @@
 		<div class='searchEndBox'>
 			<!-- 开始 -->
 			<div class='searchEndList'>
+				<router-link to="/homeDetail">
 				<div class='leftImg'>
 					<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />
 				</div>
@@ -89,6 +90,7 @@
 						<span>距离江湾体育场3km</span>
 					</div>
 				</div>
+				</router-link>
 			</div>
 			<!-- 结束 -->
 
@@ -241,7 +243,7 @@
 	}
 </script>
 
-<style style>
+<style scoped>
 	a {
 		text-decoration: none;
 	}

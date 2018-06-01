@@ -84,7 +84,7 @@
 			}
 		},
 		mounted(){
-
+			window.scrollTo(0, 0);//进入页面在顶端
 		},
 		methods: {
 			refresh: function() {
@@ -138,6 +138,7 @@
 <style scoped>
 	.container {
 		padding-top: 0.88rem;
+		padding-bottom: 1rem;
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
@@ -150,7 +151,6 @@
 	.articleMain {
 		width: 6.7rem;
 		margin: 0 auto;
-		padding-bottom: 0.1rem;
 	}
 	
 	.articleMain .headline {

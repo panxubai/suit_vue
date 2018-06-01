@@ -10,6 +10,7 @@
 		</div>
 		<div class='fdEndBox'>
 			<div class='searchEndList'>
+				<router-link to="/homeDetail">
 				<div class='leftImg'>
 					<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />
 				</div>
@@ -27,6 +28,7 @@
 						<span>距离江湾体育场3km</span>
 					</div>
 				</div>
+				</router-link>
 			</div>
 		</div>
 	</div>

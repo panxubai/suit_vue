@@ -14,7 +14,8 @@
     </div>  -->
 
     
-    <div class='routeList' > 
+    <div class='routeList'> 
+    	<router-link to="/routeChat">
         <div class='routeTop'>
         	<div class="routeTopImg">
         		<img src='https://www.suitius.com/image/resources/img_suit_picture.png'/>
@@ -42,6 +43,7 @@
           <!--  <a wx:if="{{item.on_read != 0}}">{{item.on_read}}</a>-->
             <img src='https://www.suitius.com/image/resources/ic_more.png'/>
          </div>
+         </router-link>
     </div>
 
 </div>
@@ -51,12 +53,15 @@
 </script>
 
 <style scoped>
+	a{
+		text-decoration: none;
+	}
 	.container{
    position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background: #eff3f6;
 	padding-top: 0.88rem;
 	padding-bottom: 0.98rem;

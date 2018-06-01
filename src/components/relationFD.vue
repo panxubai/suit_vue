@@ -8,7 +8,7 @@
 			<div class="information">
 		</div>
 		</div>
-		<div class='fdEndBox'>
+		<div class='fdEndBox' @click="refresh">
 			<div class='searchEndList'>
 				<div class='leftImg'>
 					<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />

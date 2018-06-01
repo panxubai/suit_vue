@@ -114,8 +114,8 @@
 				console.log(this.$route.query.gid);
 				if(this.$route.query.gid == 1){
 					this.$router.push({
-						path: '/',
-						query: {
+						name: 'homePage',
+						params: {
 				           text: e.srcElement.dataset.text,
 							type: e.srcElement.dataset.type
 				          }
