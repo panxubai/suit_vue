@@ -45,7 +45,9 @@
 			<p><img src="../assets/image/ic_login_qq.png" /></p>
 			<p><img src="../assets/image/ic_login_wechat.png" /></p>
 		</div>
-
+  <transition name="router-slid" mode="out-in">
+            <router-view></router-view>
+        </transition>
 	</div>
 </template>
 
@@ -351,5 +353,14 @@
 	.activeCode {
 		background: #FE8B25 !important;
 		color: #fff !important;
+	}
+	.router-slid-enter-active,
+	.router-slid-leave-active {
+		transition: transform .2s;
+	}
+	
+	.router-slid-enter,
+	.router-slid-leave-active {
+		transform: translate3d(100%, 0, 0);
 	}
 </style>

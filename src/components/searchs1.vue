@@ -114,9 +114,13 @@
 			//选择要搜索的字段
 			bindtapa: function(e) {
 				//console.log(this.$route.query.gid);
-					this.$router.push({
-						path: '/homePage',
-						
+				
+					this.$router.replace({
+						name: 'searchEnd',
+						params: {
+				           text: e.srcElement.dataset.text,
+							type: e.srcElement.dataset.type
+				          }
 					});
 				
 				var logsArr = this.historySearch;
@@ -124,7 +128,7 @@
 					text: e.srcElement.dataset.text,
 					type: e.srcElement.dataset.type
 				};
-				eventVue.$emit("srcElement",data)
+				eventVue.$emit("srcElement1",data)
 				for(let i = 0; i < logsArr.length; i++) {
 					if(logsArr[i].text == e.srcElement.dataset.text) {
 						logsArr.splice(i, 1);
@@ -147,7 +151,7 @@
 <style scoped>
 	.container {
 		padding-top: 0.88rem;
-		 z-index: 100;
+		 z-index: 103;
 		 position: fixed;
 		top: 0;
 		left: 0;

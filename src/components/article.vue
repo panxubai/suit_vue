@@ -84,7 +84,8 @@
 			}
 		},
 		mounted(){
-			window.scrollTo(0, 0);//进入页面在顶端
+			console.log(231231)
+			window.scrollTo(0,0)
 		},
 		methods: {
 			refresh: function() {
@@ -109,8 +110,8 @@
 				if(that.scrollYes){
 					that.scrollTops = $(document).scrollTop();
 				}
-
-				//console.log($('.ommentSum').offset().top-$(document).scrollTop(),$(document).scrollTop(),$(document).height(),$(window).height(),$(window).width())
+				
+				console.log($(document).scrollTop(),$(document).scrollTop(),$(document).height(),$(window).height(),$(window).width())
 				//在评论区
 				if($('.commentSum').offset().top-$(document).scrollTop()<$(window).height()-$('.bottomPl').height()-$('.shadeo').height()){
 					
@@ -139,6 +140,8 @@
 	.container {
 		padding-top: 0.88rem;
 		padding-bottom: 1rem;
+		z-index: 100;
+		
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);

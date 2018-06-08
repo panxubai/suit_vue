@@ -24,19 +24,19 @@
 <script>
 	var that;
 	var patrn;
-	import { Toast,MessageBox } from 'mint-ui';
+	import { Toast, MessageBox } from 'mint-ui';
 	export default {
 		data() {
 			return {
-				nameInput: "",//名字
-				passwordInput: "",//密码
+				nameInput: "", //名字
+				passwordInput: "", //密码
 				nextStep: false, //下一步可点
 
 			}
 		},
 		created: function() {
 			that = this;
-			patrn=/^(\w){6,16}$/;
+			patrn = /^(\w){6,16}$/;
 		},
 		methods: {
 			refresh: function() {
@@ -44,24 +44,24 @@
 			},
 
 			loginScress: function() {
-			if(that.nextStep){
-				if(!patrn.test(this.passwordInput)){//密码格式不对
-					Toast('密码格式不对');
-				}else{
-					MessageBox({
-					  title: '提示',
-					  message: '确定执行此操作?',
-					  showCancelButton: true
-					}).then(action => {
-                            console.log('点击了确认')
-                   });
+				if(that.nextStep) {
+					if(!patrn.test(this.passwordInput)) { //密码格式不对
+						Toast('密码格式不对');
+					} else {
+						MessageBox({
+							title: '提示',
+							message: '确定执行此操作?',
+							showCancelButton: true
+						}).then(action => {
+							console.log('点击了确认')
+						});
+					}
 				}
-			}
 			},
-			photoInput:function(){
-				if(this.nameInput != "" && this.passwordInput!= ""){
+			photoInput: function() {
+				if(this.nameInput != "" && this.passwordInput != "") {
 					that.nextStep = true
-				}else{
+				} else {
 					that.nextStep = false
 				}
 			},
@@ -72,6 +72,14 @@
 <style scoped>
 	.container {
 		padding-top: 0.88rem;
+		z-index: 105;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
 	
 	.headerS {

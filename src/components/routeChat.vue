@@ -4,9 +4,9 @@
 			<div class="backs" @click="refresh">
 				<img src="../assets/image/ic_topbar_return.png" />
 			</div>
-			<div class="headerTitle">到访详情</div>
+			<div class="headerTitle">行程详情</div>
 			<div class="information">
-		</div>
+			</div>
 		</div>
 		<div class='fdEndBox'>
 			<div class='searchEndList'>
@@ -130,6 +130,54 @@
 							</div>
 						</div>
 					</div>
+					<div class='otherId commons'>
+						<div class='headPortrait'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						</div>
+						<div class='content'>
+							<b>.name}}</b>
+							<div class='contentText'>
+								<span>item.comme大家ask的距离喀什的就ask来得及看啦nt}}</span>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<div class='otherId commons'>
+						<div class='headPortrait'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						</div>
+						<div class='content'>
+							<b>.name}}</b>
+							<div class='contentText'>
+								<span>item.comme大家ask的距离喀什的就ask来得及看啦nt}}</span>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<div class='otherId commons'>
+						<div class='headPortrait'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						</div>
+						<div class='content'>
+							<b>.name}}</b>
+							<div class='contentText'>
+								<span>item.comme大家ask的距离喀什的就ask来得及看啦nt}}</span>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<div class='otherId commons'>
+						<div class='headPortrait'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						</div>
+						<div class='content'>
+							<b>.name}}</b>
+							<div class='contentText'>
+								<span>item.comme大家ask的距离喀什的就ask来得comme大家ask的距离喀什的就ask来得comme大家ask的距离喀什的就ask来得comme大家ask的距离喀什的就ask来得comme大家ask的距离喀什的就ask来得及看啦nt}}</span>
+								<p></p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -144,20 +192,38 @@
 	</div>
 </template>
 
-<script >
+<script>
+	var that;
 	export default {
 		name: 'Home',
 		data() {
 			return {
-				mainInput: ""
+				mainInput: "",
+				scrollHeight:0,
+				content:[]
 			}
+		},
+		created: function() {
+			that = this;
+			//用户选择地址
+		},
+		mounted() {
+
+		},
+		watch: {
+			'content':'scrollSatch'
 		},
 		methods: {
 			refresh: function() {
 				window.history.go(-1)
 			},
-			
-
+			scrollSatch:function(){
+				$(".commons").each(function(){
+					that.scrollHeight = that.scrollHeight+$(this).height()
+				})
+				$('.chatBoxes').animate({scrollTop: that.scrollHeight}, 50);
+				console.log("zhixingle")
+			}
 		}
 	}
 </script>
@@ -165,11 +231,20 @@
 <style scoped>
 	.container {
 		padding-top: 0.88rem;
+		z-index: 100;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
-	.headerS{
-	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
-
-}
+	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
+	
 	a {
 		text-decoration: none;
 	}

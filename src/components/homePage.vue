@@ -40,7 +40,7 @@
 						</router-link>
 					</div>
 					<div class='searchMain'>
-						<router-link :to="{path:'/searchS',query: {gid: 1}}">
+						<router-link to="/searchs">
 							<img class="icon1" src="../assets/ic_search.png" />
 							<div class='searchTiao'>{{addressId}}</div>
 						</router-link>
@@ -73,7 +73,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class='screen_bottom'>
 						<b>构成</b>
 						<div class='screen_relation screen_relation_max'>
@@ -245,7 +244,10 @@
 		<vue-pickers :show="show5" :selectData="relationArr1" v-on:cancel="close1" v-on:confirm="confirmFn5"></vue-pickers>
 		<!-- 儿童-->
 		<vue-pickers :show="show6" :selectData="relationArr2" v-on:cancel="close1" v-on:confirm="confirmFn6"></vue-pickers>
-
+			
+			<transition name="router-slid" mode="out-in">
+            <router-view></router-view>
+        </transition>
 	</div>
 </template>
 
@@ -436,18 +438,34 @@
 		created: function() {
 			that = this;
 			//用户选择地址
-			console.log(this.$route)
-			this.addressId = this.$route.params.text || "您想住哪里";
-			this.addressType = this.$route.params.type || "";
-			//console.log(localStorage.getItem('routerHome'))
+		//	console.log(this.$route)
+			
+		},
+		mounted(){
+			//地址搜索传过来的地址
+			eventVue.$on("srcElement",function(data){
+				that.addressId = data.text
+				that.addressType = data.type
+			})
 			if(localStorage.getItem('routerHome') == 1){//1我是业主
 				this.Rentin = false;
 				this.landlord = true;
 			}else{
 				return;
 			}
+			
 		},
-		mounted(){
+		//缓存之后会执行
+//		 watch:{
+//			  $route(to,from){
+//			    this.addressId = this.$route.params.text || "您想住哪里";
+//				this.addressType = this.$route.params.type || "";
+//			  }
+//			},
+		activated(){
+			console.log('执行了');	
+			//console.log(localStorage.getItem('routerHome'))
+			
 		},
 		methods: {
 			//点击消息
@@ -488,8 +506,8 @@
 					});
 				}else{//用户选择了地址
 					this.$router.push({
-						path: '/searchEnd',
-						query: {
+						name: 'searchEnd',
+						params: {
 				           text: that.addressId,
 							type: that.addressType
 				          }
@@ -500,7 +518,7 @@
 			//点击差号清空地址
 			eliminateTap:function(){
 				this.$router.replace({
-					path: '/'
+					path: '/homePage'
 				});
 				this.addressId = "您想住哪里";
 				this.addressType = "";	
@@ -687,9 +705,14 @@
 
 <style scoped>
 	.container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		padding-top: 0.88rem;
 		font-size: 0.24rem;
-		padding-bottom: 0.98rem;
+
 	}
 	
 	.home_hander {
@@ -724,6 +747,7 @@
 		float: left;
 		text-align: center;
 		position: relative;
+			
 	}
 	
 	.mine_renting b,
@@ -775,6 +799,7 @@ top:25rem;
 	.home_mine_renting,
 	.home_mine_landlord {
 		padding-top: 1.08rem;
+			padding-bottom: 0.98rem;
 	}
 	
 	.home_mine_renting .renting_top {
@@ -1317,4 +1342,10 @@ top:25rem;
 		z-index: 8;
 		background: rgba(0, 0, 0, 0.3);
 	}
+	.router-slid-enter-active, .router-slid-leave-active {
+        transition: transform .2s;
+    }
+    .router-slid-enter, .router-slid-leave-active {
+        transform: translate3d(100%, 0, 0);
+    }
 </style>

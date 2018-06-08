@@ -4,7 +4,7 @@
 			<div class="backs" @click="refresh">
 				<img src="../assets/image/ic_topbar_return.png" />
 			</div>
-			<div class="headerTitle">消息</div>
+			<div class="headerTitle">房屋详情</div>
 			<div class="information">
 		</div>
 		</div>
@@ -612,6 +612,13 @@
 	
 	.container {
 		padding-top: 0.88rem;
+		z-index: 110;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 		
 	}
 	.headerS{

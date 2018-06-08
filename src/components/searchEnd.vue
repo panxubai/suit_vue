@@ -6,7 +6,7 @@
 				<div class="backsearch" @click="refresh">
 					<img src="../assets/image/ic_topbar_return.png" />
 				</div>
-				<router-link :to="{path:'searchs',query:{gid:2}}">
+				<router-link to="/searchs1">
 					<div class='searchs'> {{addressEnd}}</div>
 				</router-link>
 				<img class="chahaos" @click="eliminateTap" src='https://www.suitius.com/image/resources/ic_search_closs.png' />
@@ -73,45 +73,49 @@
 			<!-- 开始 -->
 			<div class='searchEndList'>
 				<router-link to="/homeDetail">
-				<div class='leftImg'>
-					<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />
-				</div>
-				<div class='rightMain'>
-					<p>好日子大家园</p>
-					<div class='nameImgPic'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
-						<span>潘旭白</span>
-						<b>60000<a>元/月</a></b>
+					<div class='leftImg'>
+						<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />
+					</div>
+					<div class='rightMain'>
+						<p>好日子大家园</p>
+						<div class='nameImgPic'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
+							<span>潘旭白</span>
+							<b>60000<a>元/月</a></b>
 
+						</div>
+						<h6>三室一厅㎡</h6>
+						<div class='addessSum'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+							<span>距离江湾体育场3km</span>
+						</div>
 					</div>
-					<h6>三室一厅㎡</h6>
-					<div class='addessSum'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
-						<span>距离江湾体育场3km</span>
-					</div>
-				</div>
 				</router-link>
 			</div>
 			<!-- 结束 -->
 
 		</div>
-
+		<transition name="router-slid" mode="out-in">
+			<router-view></router-view>
+		</transition>
 	</div>
 
 </template>
 
 <script>
 	var that;
+	import eventVue from '../../static/js/eventVue.js'
 	export default {
 		data() {
 			return {
 				soltMenuIsShow: false, //排序遮罩层
 				screenMenuIsShow: false, //筛选的遮罩层
 				selectIndex: 0, //点击排序和筛选
+				conditions:{},//首页传过来的参数  vuex中获取
 				addressEnd: "请输入地址", //地址*
 				addressType: "", //地址类型*
 				sortArr: ["综合", "价格", "便利", "舒适"],
-				soltIndex: 0,
+				soltIndex: 0,//排序
 				compositeArr1: ["整租", "合租", "不限"],
 				compositeArr2: ["1500以下", "1500-2500", "2500-3500", "3500-4500", "4500-8000", "8000以上"],
 				compositeArr3: ["简装", "精装", "毛坯", "不限"],
@@ -127,12 +131,27 @@
 		created: function() {
 			that = this;
 			//用户选择地址
-			this.addressEnd = this.$route.query.text || "请输入地址";
-			this.addressType = this.$route.query.type || "";
+
 		},
+		mounted(){
+			//地址搜索传过来的地址
+			eventVue.$on("srcElement1",function(data){
+				that.addressEnd = data.text
+				that.addressType = data.type
+			})
+		},
+//		watch: {
+//			$route(to, from) {
+//				console.log(this.$route)
+//				this.addressEnd = this.$route.params.text || "请输入地址";
+//				this.addressType = this.$route.params.type || "";
+//			}
+//		},
 		methods: {
 			refresh: function() {
-				window.history.go(-1)
+				this.$router.push({
+					path:"/homePage"
+				})
 			},
 			//点击差号清空地址
 			eliminateTap: function() {
@@ -149,18 +168,18 @@
 					this.selectIndex = 0;
 					$('.soltEnd').animate({
 						top: '-3rem'
-					})
+					},200)
 				} else {
 					this.screenMenuIsShow = false;
 					this.selectIndex = 0;
 					$('.screenEndShow').animate({
 						top: '-7rem'
-					})
+					},200)
 					this.soltMenuIsShow = true;
 					this.selectIndex = 1;
 					$('.soltEnd').animate({
 						top: '1.89rem'
-					})
+					},200)
 				}
 
 			},
@@ -170,7 +189,7 @@
 				this.selectIndex = 0;
 				$('.soltEnd').animate({
 					top: '-3rem'
-				})
+				},200)
 			},
 			//点击用什么排序
 			soltTapSure: function(e) {
@@ -183,18 +202,18 @@
 					this.selectIndex = 0;
 					$('.screenEndShow').animate({
 						top: '-7rem'
-					})
+					},200)
 				} else {
 					this.soltMenuIsShow = false;
 					this.selectIndex = 0;
 					$('.soltEnd').animate({
 						top: '-3rem'
-					})
+					},200)
 					this.screenMenuIsShow = true;
 					this.selectIndex = 2;
 					$('.screenEndShow').animate({
 						top: '1.89rem'
-					})
+					},200)
 				}
 			},
 			maskTapScreen: function() {
@@ -202,7 +221,7 @@
 				this.selectIndex = 0;
 				$('.screenEndShow').animate({
 					top: '-7rem'
-				})
+				},200)
 			},
 			screenTapSure1: function(index) {
 				if(this.soltIndex1 == index) {
@@ -246,6 +265,16 @@
 <style scoped>
 	a {
 		text-decoration: none;
+	}
+	
+	.container {
+		z-index: 100;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
 	
 	.screenEnd {
@@ -516,7 +545,7 @@
 	
 	.searchEndBox {
 		width: 100%;
-		padding-top: 1.88rem;
+		padding-top: 1.09rem;
 	}
 	
 	.searchEndList {
@@ -624,5 +653,15 @@
 		font-size: 0.32rem;
 		color: #9B9B9B;
 		margin-top: 0.48rem;
+	}
+	
+	.router-slid-enter-active,
+	.router-slid-leave-active {
+		transition: transform .2s;
+	}
+	
+	.router-slid-enter,
+	.router-slid-leave-active {
+		transform: translate3d(100%, 0, 0);
 	}
 </style>

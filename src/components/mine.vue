@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class='mine_bottom'>
-			<div class='mine_list' @click="personalTap" >
+			<div class='mine_list' @click="personalTap">
 				<img class='icon' src='../assets/image/ic_landlord_bag2.png' />
 				<b>个人资料</b>
 				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
@@ -59,8 +59,11 @@
 				<b>家政服务</b>
 				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
 			</div>
-		
+
 		</div>
+		<transition name="router-slid" mode="out-in">
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 
@@ -69,15 +72,15 @@
 
 		data() {
 			return {
-				whatLogin:false,//是否登陆
-				showTab:0,//0代表租客 1代表房东
+				whatLogin: false, //是否登陆
+				showTab: 0, //0代表租客 1代表房东
 			}
 		},
 
 		created: function() {
-			if(localStorage.getItem('routerHome') == 1){
+			if(localStorage.getItem('routerHome') == 1) {
 				this.showTab = 1
-			}else{
+			} else {
 				this.showTab = 0
 			}
 
@@ -95,19 +98,19 @@
 				});
 			},
 			//惦记我喜欢的
-			iLoveIs:function(){
+			iLoveIs: function() {
 				this.$router.push({
 					path: '/myLikeHome'
 				});
 			},
-//			/个人资料
-			personalTap:function(){
+			//			/个人资料
+			personalTap: function() {
 				this.$router.push({
 					path: '/personalData'
 				});
 			},
 			//去登陆
-			loginGo:function(){
+			loginGo: function() {
 				this.$router.push({
 					path: '/login'
 				});
@@ -134,7 +137,8 @@
 		box-sizing: border-box;
 		text-align: center;
 	}
-	.mine_top .buttonLogin{
+	
+	.mine_top .buttonLogin {
 		width: 3.20rem;
 		height: 0.8rem;
 		background: #F5A623;
@@ -146,6 +150,7 @@
 		margin-left: 2.12rem;
 		margin-top: 0.2rem;
 	}
+	
 	.mine_top .headImg {
 		width: 1.80rem;
 		height: 1.80rem;
@@ -212,5 +217,15 @@
 	
 	.mine_bottom .mine_list b {
 		font-size: 0.32rem;
+	}
+	
+	.router-slid-enter-active,
+	.router-slid-leave-active {
+		transition: transform .2s;
+	}
+	
+	.router-slid-enter,
+	.router-slid-leave-active {
+		transform: translate3d(100%, 0, 0);
 	}
 </style>

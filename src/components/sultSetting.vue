@@ -34,6 +34,9 @@
     <div class="sumBtn">
     	退出登录
     </div>
+  <transition name="router-slid" mode="out-in">
+	<router-view></router-view>
+</transition>
 </div>
 </template>
 
@@ -65,6 +68,7 @@
 	}
 	.container{
   padding-top: 0.88rem;
+ 
 }
 .headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
@@ -114,4 +118,10 @@ margin-top:0.1rem;
 	color: #fff;
 	font-size: 0.28rem;
 }
+.router-slid-enter-active, .router-slid-leave-active {
+        transition: transform .2s;
+    }
+    .router-slid-enter, .router-slid-leave-active {
+        transform: translate3d(100%, 0, 0);
+    }
 </style>

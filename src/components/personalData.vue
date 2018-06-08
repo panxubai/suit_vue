@@ -7,39 +7,39 @@
 			</div>
 			<div class="headerTitle">个人资料</div>
 			<div class="information">
-		</div>
+			</div>
 		</div>
 		<div class='topPhoto'>
-        <div class='images' >
-           <!--bindtap='photoTap' <image class='absoloatImg' src='../../resources/restImg/ic_user_camera.png'></image> -->
-           <img class="absoloatImg" src="../assets/image/ic_user_camera.png"/>
-			<img  class='headImg' src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTILaybAfrFF6Dz3xicIQVFJCAhK1JW4z6QwxnlmibS43MTEZbJWWJhDT5D6PQicRmrht9pUz5qn3eyqQ/0' />
-        </div>
-        <b>点击更换头像</b> 
-    </div>
-	
+			<div class='images'>
+				<!--bindtap='photoTap' <image class='absoloatImg' src='../../resources/restImg/ic_user_camera.png'></image> -->
+				<img class="absoloatImg" src="../assets/image/ic_user_camera.png" />
+				<img class='headImg' src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTILaybAfrFF6Dz3xicIQVFJCAhK1JW4z6QwxnlmibS43MTEZbJWWJhDT5D6PQicRmrht9pUz5qn3eyqQ/0' />
+			</div>
+			<b>点击更换头像</b>
+		</div>
+
 		<div class='questMain'>
 			<div class='schools'>
-                <p>昵称</p>
-                <input type='text' placeholder='请填写昵称' v-model="nicknameVal"/>
-            </div>
+				<p>昵称</p>
+				<input type='text' placeholder='请填写昵称' v-model="nicknameVal" />
+			</div>
 			<div class='birthday'>
 				<p>生日</p>
-				 <span v-if="yearText != ''" @click='birthdayTap'>{{yearText}}年{{monthText}}月</span>
+				<span v-if="yearText != ''" @click='birthdayTap'>{{yearText}}年{{monthText}}月</span>
 				<span v-else @click='birthdayTap'>请选择生日</span>
 
 			</div>
 			<div class='gender'>
 				<p>性别</p>
 				<div class="genderMan" v-bind:class="genderIndex == 1?'active_color':''" data-index='1' @click='genderTap'>
-					
-<img v-if="genderIndex == 1" data-index = '1'  src='https://www.suitius.com/image/resources/questionnaire/ic_boy2.png'/>
-<img v-else data-index='1' src='https://www.suitius.com/image/resources/questionnaire/ic_boy1.png' />
+
+					<img v-if="genderIndex == 1" data-index='1' src='https://www.suitius.com/image/resources/questionnaire/ic_boy2.png' />
+					<img v-else data-index='1' src='https://www.suitius.com/image/resources/questionnaire/ic_boy1.png' />
 					<a data-index='1'>男</a>
 				</div>
 				<div class="genderWoman" v-bind:class="genderIndex == 0?'active_color':''" data-index='0' @click='genderTap'>
-					<img v-if="genderIndex == 0" data-index = '0' src='https://www.suitius.com/image/resources/questionnaire/ic_boy4.png' @click='genderTap'/>
-<img v-else data-index='0' src='https://www.suitius.com/image/resources/questionnaire/ic_boy3.png' />
+					<img v-if="genderIndex == 0" data-index='0' src='https://www.suitius.com/image/resources/questionnaire/ic_boy4.png' @click='genderTap' />
+					<img v-else data-index='0' src='https://www.suitius.com/image/resources/questionnaire/ic_boy3.png' />
 					<a data-index='0'>女</a>
 				</div>
 			</div>
@@ -47,23 +47,23 @@
 			<div class='birthday'>
 				<p>职业</p>
 				<span v-if="occupationText !=''" @click="occupationTap">{{occupationText}}</span>
-       <span v-else @click="occupationTap">请选择职业</span>
+				<span v-else @click="occupationTap">请选择职业</span>
 			</div>
 			<div class='schools'>
 				<p>学校</p>
-				<input type='text' placeholder='请填写学校' v-model="inputVal"  />
+				<input type='text' placeholder='请填写学校' v-model="inputVal" />
 			</div>
 
 			<div class='rests'>
 				<p>宠物</p>
 				<div class='restsYes' data-index='1' @click='restsTap'>
-				<img v-if="restsIndex == 1"  src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index = '1'  />
-<img  v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1'>
+					<img v-if="restsIndex == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='1' />
+					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1'>
 					<a data-index='1'>有</a>
 				</div>
 				<div class='restsNo' data-index='0' @click='restsTap'>
-	           <img v-if="restsIndex == 0" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index = '0'  />
-<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='0'>
+					<img v-if="restsIndex == 0" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='0' />
+					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='0'>
 					<a data-index='0'>无</a>
 				</div>
 
@@ -72,7 +72,7 @@
 		</div>
 
 		<!--"调起城市组件结束-->
-		<div class="dialog-mask" v-show='showDiv' @click="closeShadow" ></div>
+		<div class="dialog-mask" v-show='showDiv' @click="closeShadow"></div>
 		<vue-pickers :show="show1" :selectData="pickData2" v-on:cancel="close" v-on:confirm="confirmFn"></vue-pickers>
 		<vue-pickers :show="show2" :selectData="pickData1" v-on:cancel="close1" v-on:confirm="confirmFn1"></vue-pickers>
 	</div>
@@ -81,23 +81,23 @@
 
 <script>
 	const date = new Date()
-		const years = []
-		const months = []
-		for (let i = 1960; i <= date.getFullYear(); i++) {
-			let data = {
-				text:i,
-				value:i
-			}
-		  years.push(data)
+	const years = []
+	const months = []
+	for(let i = 1960; i <= date.getFullYear(); i++) {
+		let data = {
+			text: i,
+			value: i
 		}
-		
-		for (let i = 1; i <= 12; i++) {
-		  let data1 = {
-				text:i,
-				value:i
-			}
-		  months.push(data1)
+		years.push(data)
+	}
+
+	for(let i = 1; i <= 12; i++) {
+		let data1 = {
+			text: i,
+			value: i
 		}
+		months.push(data1)
+	}
 	import VuePickers from 'vue-pickers'
 	export default {
 		components: {
@@ -105,45 +105,45 @@
 		},
 		data() {
 			return {
-				showDiv:false,//遮罩层
-				show1: false,//组件的显示隐藏
-				show2: false,//组件的显示隐藏
-				  pickData1: {
-						columns: 1,
-						default: [{
-							text: "金融",
-						}],
-						pData1: [{
-							text: "金融",
-						}, {
-							text: "销售",
-						}, {
-							text: "IT互联网",
-						}, {
-							text: "教育培训",
-						}, {
-							text: "电商",
-						}, {
-							text: "硬件",
-						}, {
-							text: "学生",
-						}, {
-							text: "老板",
-						}, {
-							text: "其他",
-						}]
-					},
+				showDiv: false, //遮罩层
+				show1: false, //组件的显示隐藏
+				show2: false, //组件的显示隐藏
+				pickData1: {
+					columns: 1,
+					default: [{
+						text: "金融",
+					}],
+					pData1: [{
+						text: "金融",
+					}, {
+						text: "销售",
+					}, {
+						text: "IT互联网",
+					}, {
+						text: "教育培训",
+					}, {
+						text: "电商",
+					}, {
+						text: "硬件",
+					}, {
+						text: "学生",
+					}, {
+						text: "老板",
+					}, {
+						text: "其他",
+					}]
+				},
 				pickData2: {
 					columns: 2, // 两列
 					//link: true, // 联级必须需要link 参数
 					default: [{
 							text: 1990,
-							value:1990
+							value: 1990
 
 						},
 						{
 							text: 1,
-							value:1
+							value: 1
 
 						},
 					], // 默认显示哪个
@@ -153,13 +153,13 @@
 					pData2: months,
 
 				},
-				nicknameVal:"",//昵称
-				occupationText:"",//选择职业
-			    yearText:"",//选择年
-			    monthText: "",//选择月
-			    genderIndex:0,//0，未选择，1，男    0，女
-			    restsIndex: 0,//0，未选择，1，是    0，否
-			    inputVal:""//学校
+				nicknameVal: "", //昵称
+				occupationText: "", //选择职业
+				yearText: "", //选择年
+				monthText: "", //选择月
+				genderIndex: 0, //0，未选择，1，男    0，女
+				restsIndex: 0, //0，未选择，1，是    0，否
+				inputVal: "" //学校
 
 			}
 		},
@@ -190,13 +190,13 @@
 				this.monthText = data.select2.text;
 			},
 			//点击遮罩层
-			closeShadow:function(){
+			closeShadow: function() {
 				this.show1 = false;
 				this.show2 = false;
 				this.showDiv = false;
 			},
 			//点击选择职业
-			occupationTap:function(){
+			occupationTap: function() {
 				this.showDiv = true;
 				this.show2 = true;
 			},
@@ -215,11 +215,11 @@
 				this.pickData1.default[0].value = data.select1.value;
 			},
 			//点击选择性别
-			genderTap:function(e){
+			genderTap: function(e) {
 				this.genderIndex = e.target.dataset.index
 			},
 			//点击选择宠物
-			restsTap:function(e){
+			restsTap: function(e) {
 				this.restsIndex = e.target.dataset.index
 			},
 
@@ -230,52 +230,65 @@
 
 <style scoped>
 	/* pages/questionnaire/questionnaire.wxss */
-	.container{
- padding-top: 0.88rem;
-}
-.headerS{
-	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
-
-}
-.topPhoto{
-  width: 100%;
-  height: 3.32rem;
-  text-align: center;
-  padding-top: 0.64rem;
-  box-sizing: border-box;
-  font-size: 0;
-}
-.topPhoto .images{
-  width: 1.60rem;
-  height: 1.60rem;
-  margin: 0 auto;
-  position: relative;
-
-}
-.topPhoto b{
-	display: block;
-	text-align: center;
-	font-family: PingFangSC-Regular;
-	margin-top: 0.2rem;
-	  font-size: 0.24rem;
-color: #9B9B9B;
-}
-.topPhoto .images .headImg{
-  width: 1.60rem;
-  height: 1.60rem;
-  border-radius: 50%;
-  z-index: 10;
-}
-.topPhoto .images .absoloatImg{
-	width: 0.58rem;
-	height: 0.48rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-}
+	
+	.container {
+		padding-top: 0.88rem;
+		z-index: 100;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
+	}
+	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
+	
+	.topPhoto {
+		width: 100%;
+		height: 3.32rem;
+		text-align: center;
+		padding-top: 0.64rem;
+		box-sizing: border-box;
+		font-size: 0;
+	}
+	
+	.topPhoto .images {
+		width: 1.60rem;
+		height: 1.60rem;
+		margin: 0 auto;
+		position: relative;
+	}
+	
+	.topPhoto b {
+		display: block;
+		text-align: center;
+		font-family: PingFangSC-Regular;
+		margin-top: 0.2rem;
+		font-size: 0.24rem;
+		color: #9B9B9B;
+	}
+	
+	.topPhoto .images .headImg {
+		width: 1.60rem;
+		height: 1.60rem;
+		border-radius: 50%;
+		z-index: 10;
+	}
+	
+	.topPhoto .images .absoloatImg {
+		width: 0.58rem;
+		height: 0.48rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
 	
 	.questMain {
 		width: 5.9rem;
@@ -444,15 +457,14 @@ color: #9B9B9B;
 	.questMain .gender .active_color a {
 		color: #FE8B25;
 	}
-	a{
+	
+	a {
 		text-decoration: none;
 	}
 	
 	.area_roll>div {
 		font-size: 0.24rem;
 	}
-	
-
 	/*.area_roll_mask{
 	background: #fff !important;
 }

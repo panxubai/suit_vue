@@ -1,47 +1,73 @@
 <template>
   <div id="app">
-    
+    <loading v-show='showLoading'></loading>
 		<div id="content">
-			<transition :name="direction" mode="out-in"> <!--动态获得transition 的name值-->
-				<router-view></router-view>
-			</transition>	
+
+			    <router-view></router-view>
+		
+			<!--<transition  name="router-fade" mode="out-in">
+					<router-view v-if="!$route.meta.keepAlive"></router-view>
+			</transition>	-->
 		</div>
 		<nav class="nav">
 				<router-view name="nav"></router-view>
-		</nav>
-		
+		</nav>		
   </div>
 </template>
 
 <script>
+	import loading from './components/Loading.vue'
 export default {
   name: 'App',
 	data() {
 			return {
-	
+				showLoading:false
 			}
 		},
+		 created: function () {
+		 	console.log(this.$route.meta.keepAlive)
+      window.AppComp = this;
+    },
+		 components: {
+      'loading': loading,
+    },
+    
 	computed: {
-		direction() {
-			const viewDir = this.$store.state.viewDirection
-			let tranName =''
-        if (viewDir === 'left') {
-          tranName = 'view-out'
-        } else if (viewDir === 'right') {
-          tranName = 'view-in'
-        } else {
-          tranName = 'fade'
-        }
-        return tranName
-      },
+//		direction() {
+//			const viewDir = this.$store.state.viewDirection
+//			let tranName =''
+//      if (viewDir === 'left') {
+//        tranName = 'view-out'
+//      } else if (viewDir === 'right') {
+//        tranName = 'view-in'
+//      } else {
+//        tranName = 'fade'
+//      }
+//      return tranName
+//    },
+     
     },
   
 }
 </script>
 
 <style>
+
 	a{
 		text-decoration: none;
+	}
+		.container{
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #fff;
+	box-sizing: border-box;
+}
+
+	#content{
+		background: #fff;
 	}
 	.headerS{
 	width: 100%;
@@ -133,17 +159,20 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
-  -webkit-animation-duration: .2s;
-  animation-duration: .2s;
+  height: 100%;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+ 
 }
 
 .view-in-enter-active {
   -webkit-animation-name: inRight;
   animation-name: inRight;
+  
 }
 
 .view-out-leave-active {

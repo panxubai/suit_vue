@@ -45,7 +45,6 @@
 				<p>学校</p>
 				<input type='text' placeholder='请填写学校' v-model="inputVal"  />
 			</div>
-
 			<div class='rests'>
 				<p>宠物</p>
 				<div class='restsYes' data-index='1' @click='restsTap'>
@@ -234,6 +233,13 @@
 	/* pages/questionnaire/questionnaire.wxss */
 	.container{
 		padding-top: 0.88rem;
+		z-index: 100;
+		position: fixed;
+		top: 0;
+		left: 0;
+        right: 0;
+        bottom: 0;
+         overflow-y:scroll;  
 	}
 
 	.backTop {
@@ -417,7 +423,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 8;
+		z-index: 100;
 		background: rgba(0, 0, 0, 0.3);
 	}
 	

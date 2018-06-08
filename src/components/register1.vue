@@ -20,7 +20,9 @@
 				<button :class="nextStep?'activeCode':''" @click="loginScress">下一步</button>
 			</div>
 		</div>
-
+		<transition name="router-slid" mode="out-in">
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 
@@ -67,10 +69,10 @@
 				}
 			},
 			loginScress: function() {
-				if(this.nextStep){
+				if(this.nextStep) {
 					this.$router.push({
-					path: '/register2'
-				});
+						path: '/register2'
+					});
 				}
 			},
 		}
@@ -112,6 +114,14 @@
 <style scoped>
 	.container {
 		padding-top: 0.88rem;
+		z-index: 105;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
 	
 	.headerS {
@@ -172,5 +182,15 @@
 	.activeCode {
 		background: #FE8B25 !important;
 		color: #fff !important;
+	}
+	
+	.router-slid-enter-active,
+	.router-slid-leave-active {
+		transition: transform .2s;
+	}
+	
+	.router-slid-enter,
+	.router-slid-leave-active {
+		transform: translate3d(100%, 0, 0);
 	}
 </style>

@@ -75,18 +75,37 @@
 </template>
 
 <script >
+	var that;
 	export default {
   name: 'Home',
   data () {
     return {
-      mainInput:""
+      	mainInput:"",
+      	scrollHeight:0,
+		content:[]
     }
   },
+  created: function() {
+			that = this;
+			//用户选择地址
+		},
+		mounted() {
+
+		},
+		watch: {
+			'content':'scrollSatch'
+		},
   methods: {
 			refresh: function() {
 				window.history.go(-1)
 			},
-			
+			scrollSatch:function(){
+				$(".commons").each(function(){
+					that.scrollHeight = that.scrollHeight+$(this).height()
+				})
+				$('.chatBoxes').animate({scrollTop: that.scrollHeight}, 50);
+				console.log("zhixingle")
+			}
 
 		}
 	}
@@ -95,6 +114,14 @@
 <style scoped>
 	.container{
 		padding-top: 0.88rem;
+		z-index: 100;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y:scroll;
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);

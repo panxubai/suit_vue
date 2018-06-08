@@ -216,7 +216,9 @@
 			</div>
 			<div class='buttonsum' @click="jointBtnTap">提交</div>
 		</div>
-
+<transition name="router-slid" mode="out-in">
+            <router-view></router-view>
+        </transition>
 	</div>
 
 </template>
@@ -371,6 +373,13 @@
 	.container {
 		font-size: 0;
 		padding-bottom: 0.98rem;
+		z-index: 105;
+		 position: fixed;
+		top: 0;
+		left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y:scroll; 
 	}
 	
 	a {
@@ -1039,4 +1048,10 @@ color: #555555;
 		font-size: 0.28rem;
 color: #4A4A4A;
 	}
+	.router-slid-enter-active, .router-slid-leave-active {
+        transition: transform .2s;
+    }
+    .router-slid-enter, .router-slid-leave-active {
+        transform: translate3d(100%, 0, 0);
+    }
 </style>

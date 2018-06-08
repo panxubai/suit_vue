@@ -6,7 +6,7 @@
 			</div>
 			<div class="headerTitle">消息</div>
 			<div class="information">
-		</div>
+			</div>
 		</div>
 		<div class='feedMain'>
 			<div class='rentingWhat'>
@@ -37,14 +37,14 @@
 				<div class='chumList'>
 					<div class="scrollGd">
 						<div class='headList'>
-							<img src='../assets/ic_user_camera.png' class='images'/>
+							<img src='../assets/ic_user_camera.png' class='images' />
 							<!--<img class='delImg' src='https://www.suitius.com/image/resources/ic_search_closs.png'/>-->
 						</div>
 						<div class='tapPhoto'>
 							<input type="file" v-on:change='previewFile' />
 							<img class='absoloatImg' src='../assets/ic_user_camera.png' />
 						</div>
-					
+
 					</div>
 
 				</div>
@@ -78,7 +78,7 @@
 			rentingWhatTap: function(e) {
 				this.rentingIndex = e.target.dataset.index
 			},
-			previewFile: function(e) { 
+			previewFile: function(e) {
 				console.log(e)
 			}
 		}
@@ -90,11 +90,20 @@
 	
 	.container {
 		padding-top: 0.88rem;
+		z-index: 105;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
-	.headerS{
-	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
-
-}
+	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
+	
 	.feedMain {
 		width: 6.7rem;
 		margin: 0 auto;
@@ -187,14 +196,15 @@
 		-ms-overflow-x: scroll;
 		height: 1.4rem;
 		margin-top: 0.12rem;
-
 	}
-	.homeImg .chumList .scrollGd{
+	
+	.homeImg .chumList .scrollGd {
 		width: 3rem;
 		height: 1.4rem;
 		overflow: hidden;
 		font-size: 0;
 	}
+	
 	.homeImg .chumList .headList {
 		width: 1.4rem;
 		height: 1.4rem;
@@ -225,13 +235,14 @@
 		display: inline-block;
 	}
 	
-	.homeImg .tapPhoto input{
+	.homeImg .tapPhoto input {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		opacity: 0;
 		z-index: 100;
 	}
+	
 	.homeImg .tapPhoto .absoloatImg {
 		width: 0.58rem;
 		height: 0.48rem;

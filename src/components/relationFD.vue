@@ -274,6 +274,13 @@ if(i == 0){
 <style scoped>
 	.container{
 		padding-top: 0.88rem;
+		z-index: 110;
+		 position: fixed;
+		top: 0;
+		left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y:scroll; 
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);

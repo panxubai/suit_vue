@@ -4,9 +4,9 @@
 			<div class="backs" @click="refresh">
 				<img src="../assets/image/ic_topbar_return.png" />
 			</div>
-			<div class="headerTitle">行程详情</div>
+			<div class="headerTitle">到访详情</div>
 			<div class="information">
-		</div>
+			</div>
 		</div>
 		<div class='fdEndBox'>
 			<div class='searchEndList'>
@@ -41,13 +41,13 @@
 					<!-- <div class='refuse'>已拒绝</div>-->
 				</div>
 				<div class='headNew'>
-	                <img class='images' src='../assets/ic_suite_phone.png'/>
-	                <b>{{dataArr.n</b>
-	                <div class='phoneFs'>
-		                <span>发送</span>
-		                <img src='../assets/ic_suite_phone.png'/>
-	               </div>
-	            </div> 
+					<img class='images' src='../assets/ic_suite_phone.png' />
+					<b>{{dataArr.n</b>
+					<div class='phoneFs'>
+						<span>发送</span>
+						<img src='../assets/ic_suite_phone.png' />
+					</div>
+				</div>
 				<div class='select' v-show="refuseShow">
 					<div class='refuse' @click="refuseTap">拒绝</div>
 					<div class='consent' @click="consentTap">同意</div>
@@ -115,6 +115,7 @@
 </template>
 
 <script>
+	var that;
 	export default {
 		name: 'Home',
 		data() {
@@ -122,8 +123,20 @@
 				mainInput: "",
 				questionShow: false,
 				showNumber: 1,
-				refuseShow:true,//点击同意和拒绝之后隐藏
+				refuseShow: true, //点击同意和拒绝之后隐藏
+				scrollHeight: 0,
+				content: []
 			}
+		},
+		created: function() {
+			that = this;
+			//用户选择地址
+		},
+		mounted() {
+
+		},
+		watch: {
+			'content': 'scrollSatch'
 		},
 		methods: {
 			refresh: function() {
@@ -145,7 +158,16 @@
 			elsectTap: function(val) {
 				this.showNumber = val
 			},
-			
+			scrollSatch: function() {
+				$(".commons").each(function() {
+					that.scrollHeight = that.scrollHeight + $(this).height()
+				})
+				$('.chatBoxes').animate({
+					scrollTop: that.scrollHeight
+				}, 50);
+				console.log("zhixingle")
+			}
+
 		}
 	}
 </script>
@@ -153,10 +175,19 @@
 <style scoped>
 	.container {
 		padding-top: 0.88rem;
+		z-index: 100;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
-	.headerS{
-	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
-}
+	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
 	
 	a {
 		text-decoration: none;
@@ -328,41 +359,44 @@
 		float: right;
 	}
 	
-	.visitTime .visitMain .headNew{
-   width: 100%;
-   margin-top: 0.10rem;
-   font-size: 0.44rem;
-}
-.visitTime .visitMain .headNew .images{
-    width: 0.40rem;
-  height: 0.40rem;
-  float: left;
-  border-radius: 50%;
-  margin-top: 0.10rem;
-  margin-right: 0.16rem;
-}
-.visitTime .visitMain .headNew .phoneFs{
-  width:30%;
-  float: right;
-  margin-top:0.10rem;
-
-}
-.visitTime .visitMain .headNew .phoneFs span{
-  font-size: 0.24rem;
- float: right;
-
- margin-right: 0.30rem;
- color: #FE8B24;
-}
-.visitTime .visitMain .headNew .phoneFs img{
-  width: 0.30rem;
-  height: 0.30rem;
-  float: right;
-}
-.visitTime .visitMain .headNew b{
-  font-size: 0.24rem;
-color: #9B9B9B;
-}
+	.visitTime .visitMain .headNew {
+		width: 100%;
+		margin-top: 0.10rem;
+		font-size: 0.44rem;
+	}
+	
+	.visitTime .visitMain .headNew .images {
+		width: 0.40rem;
+		height: 0.40rem;
+		float: left;
+		border-radius: 50%;
+		margin-top: 0.10rem;
+		margin-right: 0.16rem;
+	}
+	
+	.visitTime .visitMain .headNew .phoneFs {
+		width: 30%;
+		float: right;
+		margin-top: 0.10rem;
+	}
+	
+	.visitTime .visitMain .headNew .phoneFs span {
+		font-size: 0.24rem;
+		float: right;
+		margin-right: 0.30rem;
+		color: #FE8B24;
+	}
+	
+	.visitTime .visitMain .headNew .phoneFs img {
+		width: 0.30rem;
+		height: 0.30rem;
+		float: right;
+	}
+	
+	.visitTime .visitMain .headNew b {
+		font-size: 0.24rem;
+		color: #9B9B9B;
+	}
 	
 	.visitTime .visitMain .select {
 		width: 100%;

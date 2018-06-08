@@ -8,6 +8,7 @@ import JourneyNews from '@/components/journeyNews' //消息页
 import PersonalData from '@/components/personalData' //个人资料
 import RelationFD from '@/components/relationFD' //联系业主
 import Searchs from '@/components/searchs' //搜索
+import Searchs1 from '@/components/searchs1' //搜索
 import Sultnews from '@/components/sultnews' //系统消息
 import Message from '@/components/message' //系统消息
 import SultSetting from '@/components/sultSetting' //系统设置
@@ -44,63 +45,124 @@ export default new Router({
 			redirect: "/startPage"
 		},
 		{
-			path: '/questionnaire',
-			name: 'questionnaire',
-			component: Questionnaire
-		}, {
 			path: '/startPage',
 			name: 'startPage',
 			component: StartPage
+		}, {
+			path: '/article',
+			name: 'article',
+			component: Article
 		}, {
 			path: '/selectCity',
 			name: 'selectCity',
 			component: SelectCity
 		}, {
-			path: '/linkContract',
-			name: 'linkContract',
-			component: LinkContract
-		}, {
-			path: '/personalData',
-			name: 'personalData',
-			component: PersonalData
-		}, {
-			path: '/relationFD',
-			name: 'relationFD',
-			component: RelationFD
-		}, {
 			path: '/login',
 			name: 'login',
-			component: Login
+			component: Login,
+			children: [{
+				path: '/register1',
+				name: 'register1',
+				component: Register1,
+				children: [{
+					path: '/register2',
+					name: 'register2',
+					component: Register2
+				}]
+			}]
 		}, {
-			path: '/register1',
-			name: 'register1',
-			component: Register1
-		}, {
-			path: '/register2',
-			name: 'register2',
-			component: Register2
-		}, {
-			path: '/auditStatus',
-			name: 'auditStatus',
-			component: AuditStatus
+			path: '/message',
+			name: 'message',
+			component: Message
 		}, {
 			path: '/homePage',
 			name: 'homePage',
 			components: {
 				default: HomePage,
 				nav: Nav
-			}
+			},
+			children: [{
+				path: '/questionnaire',
+				name: 'questionnaire',
+				component: Questionnaire
+			}, {
+				path: '/searchs',
+				name: 'searchs',
+				component: Searchs
+			}, {
+				path: '/myHome',
+				name: 'myHome',
+				component: MyHome,
+				children: [{
+					path: '/amendHome',
+					name: 'amendHome',
+					component: AmendHome
+				}]
+			}, {
+				path: '/homeRegister',
+				name: 'homeRegister',
+				component: HomeRegister
+			}, {
+				path: '/auditStatus',
+				name: 'auditStatus',
+				component: AuditStatus
+			}, {
+				path: '/searchEnd',
+				name: 'searchEnd',
+				component: SearchEnd,
+				children: [{
+					path: '/searchs1',
+					name: 'searchs1',
+					component: Searchs1
+				}, {
+					path: '/homeDetail',
+					name: 'homeDetail',
+					component: HomeDetail,
+					children: [{
+						path: '/relationFD',
+						name: 'relationFD',
+						component: RelationFD
+					}, {
+						path: '/linkContract',
+						name: 'linkContract',
+						component: LinkContract
+					}]
+				}]
+			}]
 		}, {
 			path: '/mine',
 			name: 'mine',
 			components: {
 				default: Mine,
 				nav: Nav
-			}
+			},
+			children: [{
+				path: '/personalData',
+				name: 'personalData',
+				component: PersonalData
+			}, {
+				path: '/myLikeHome',
+				name: 'myLikeHome',
+				component: MyLikeHome
+			}]
+
 		}, {
-			path: '/searchs',
-			name: 'searchs',
-			component: Searchs
+			path: '/sultSetting',
+			name: 'sultSetting',
+			component: SultSetting,
+			children: [{
+				path: '/feedback',
+				name: 'feedback',
+				component: Feedback
+			}, {
+				path: '/asregards',
+				name: 'asregards',
+				component: Asregards
+			}, {
+				path: '/changePassword',
+				name: 'changePassword',
+				component: ChangePassword
+			}]
 		}, {
 			path: '/journeyNews',
 			name: 'journeyNews',
@@ -117,78 +179,42 @@ export default new Router({
 			name: 'sultnews',
 			component: Sultnews
 		}, {
-			path: '/message',
-			name: 'message',
-			component: Message
-		}, {
-			path: '/sultSetting',
-			name: 'sultSetting',
-			component: SultSetting
-		}, {
-			path: '/asregards',
-			name: 'asregards',
-			component: Asregards
-		}, {
-			path: '/article',
-			name: 'article',
-			component: Article
-		}, {
 			path: '/journeyList',
 			name: 'journeyList',
 			components: {
 				default: JourneyList,
 				nav: Nav
-			}
+			},
+			children: [{
+				path: '/routeChat',
+				name: 'routeChat',
+				component: RouteChat
+			}]
+
 		}, {
 			path: '/myVisit',
 			name: 'myVisit',
 			components: {
 				default: MyVisit,
 				nav: Nav
-			}
-		}, {
-			path: '/feedback',
-			name: 'feedback',
-			component: Feedback
-		}, {
-			path: '/homeRegister',
-			name: 'homeRegister',
-			component: HomeRegister
-		}, {
-			path: '/myHome',
-			name: 'myHome',
-			component: MyHome
-		}, {
-			path: '/searchEnd',
-			name: 'searchEnd',
-			component: SearchEnd
-		}, {
-			path: '/amendHome',
-			name: 'amendHome',
-			component: AmendHome
+			},
+			children: [{
+				path: '/visitChat',
+				name: 'visitChat',
+				component: VisitChat
+			}]
 		}, {
 			path: '/discussionList',
 			name: 'discussionList',
 			components: {
 				default: DiscussionList,
 				nav: Nav
-			}
-		}, {
-			path: '/discussion',
-			name: 'discussion',
-			component: Discussion
-		}, {
-			path: '/routeChat',
-			name: 'routeChat',
-			component: RouteChat
-		}, {
-			path: '/visitChat',
-			name: 'visitChat',
-			component: VisitChat
-		}, {
-			path: '/homeDetail',
-			name: 'homeDetail',
-			component: HomeDetail
+			},
+			children: [{
+				path: '/discussion',
+				name: 'discussion',
+				component: Discussion
+			}]
 		}, {
 			path: '/community',
 			name: 'community',
@@ -196,14 +222,6 @@ export default new Router({
 				default: Community,
 				nav: Nav
 			}
-		}, {
-			path: '/myLikeHome',
-			name: 'myLikeHome',
-			component: MyLikeHome
-		}, {
-			path: '/changePassword',
-			name: 'changePassword',
-			component: ChangePassword
 		}
 
 	]

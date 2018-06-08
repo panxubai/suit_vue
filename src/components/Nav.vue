@@ -1,4 +1,5 @@
 <template>
+	
 	<div id="navNav">
 		<ul class="Rentin" v-if="showTab == 0">
 			<li>

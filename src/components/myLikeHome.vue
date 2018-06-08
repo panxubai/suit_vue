@@ -6,28 +6,28 @@
 			</div>
 			<div class="headerTitle">我喜欢的</div>
 			<div class="information">
-		</div>
+			</div>
 		</div>
 		<div class='fdEndBox'>
 			<div class='searchEndList'>
 				<router-link to="/homeDetail">
-				<div class='leftImg'>
-					<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />
-				</div>
-				<div class='rightMain'>
-					<p>好日子大家园</p>
-					<div class='nameImgPic'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
-						<span>潘旭白</span>
-						<b>60000<a>元/月</a></b>
+					<div class='leftImg'>
+						<img src='https://www.suitius.com/tp5/public/uploads/houseimg/5acace442e7c0.jpg' />
+					</div>
+					<div class='rightMain'>
+						<p>好日子大家园</p>
+						<div class='nameImgPic'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
+							<span>潘旭白</span>
+							<b>60000<a>元/月</a></b>
 
+						</div>
+						<h6>三室一厅㎡</h6>
+						<div class='addessSum'>
+							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+							<span>距离江湾体育场3km</span>
+						</div>
 					</div>
-					<h6>三室一厅㎡</h6>
-					<div class='addessSum'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
-						<span>距离江湾体育场3km</span>
-					</div>
-				</div>
 				</router-link>
 			</div>
 		</div>
@@ -35,11 +35,11 @@
 </template>
 
 <script>
-		export default {
+	export default {
 
 		data() {
 			return {
-				
+
 			}
 		},
 
@@ -50,23 +50,32 @@
 			refresh: function() {
 				window.history.go(-1)
 			},
-			
 
 		}
 	}
 </script>
 
 <style scoped>
-	a{
+	a {
 		text-decoration: none;
 	}
-	.headerS{
-	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
-
-}
-	.container{
-		padding-top: 0.88rem;
+	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
 	}
+	
+	.container {
+		padding-top: 0.88rem;
+		z-index: 100;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
+	}
+	
 	.fdEndBox {
 		width: 100%;
 		border-bottom: 1px solid #E5E5E5;

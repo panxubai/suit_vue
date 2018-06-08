@@ -7,7 +7,7 @@
 			</div>
 			<div class="headerTitle">登记房屋</div>
 			<div class="information">
-		</div>
+			</div>
 		</div>
 		<div class='uploadPictures'>
 			<div class='homeImg'>
@@ -70,8 +70,6 @@
 			<div class='btnSumTap'>提交</div>
 
 		</div>
-
-		
 
 	</div>
 
@@ -154,11 +152,19 @@
 	
 	.container {
 		padding-top: 0.88rem;
+		z-index: 100;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
-	.headerS{
-	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
-
-}
+	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
+	
 	.uploadPictures {
 		width: 100%;
 		height: 5.30rem;
@@ -352,6 +358,4 @@
 		font-size: 0.28rem;
 		color: #FFFFFF;
 	}
-	
-	
 </style>
