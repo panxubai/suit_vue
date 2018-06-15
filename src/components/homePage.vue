@@ -244,10 +244,10 @@
 		<vue-pickers :show="show5" :selectData="relationArr1" v-on:cancel="close1" v-on:confirm="confirmFn5"></vue-pickers>
 		<!-- 儿童-->
 		<vue-pickers :show="show6" :selectData="relationArr2" v-on:cancel="close1" v-on:confirm="confirmFn6"></vue-pickers>
-			
-			<transition name="router-slid" mode="out-in">
-            <router-view></router-view>
-        </transition>
+
+		<transition name="router-slid" mode="out-in">
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 
@@ -272,7 +272,7 @@
 				Rentin: true, //我要租房
 				landlord: false, //我是业主
 				addressId: "您想住哪里", //给后台穿地址
-				addressType:"",//给后台穿地址类型
+				addressType: "", //给后台穿地址类型
 				noticeShadowShow: false, //合作须知
 				ownerFirstShow: false, //业主身份验证
 				photoTap: false, //是否可以点击获取验证码
@@ -438,34 +438,55 @@
 		created: function() {
 			that = this;
 			//用户选择地址
-		//	console.log(this.$route)
-			
+			//	console.log(this.$route)
+//			this.axios.post('/user', {
+//					firstName: 'Fred',
+//					lastName: 'Flintstone'
+//				})
+//				.then(function(response) {
+//					console.log(response);
+//				})
+//				.catch(function(error) {
+//					console.log(error);
+//				});
+//			this.axios.get('/user', {
+//					params: {
+//						ID: 12345
+//					}
+//				})
+//				.then(function(response) {
+//					console.log(response);
+//				})
+//				.catch(function(error) {
+//					console.log(error);
+//				});
+
 		},
-		mounted(){
+		mounted() {
 			//地址搜索传过来的地址
-			eventVue.$on("srcElement",function(data){
+			eventVue.$on("srcElement", function(data) {
 				that.addressId = data.text
 				that.addressType = data.type
 			})
-			if(localStorage.getItem('routerHome') == 1){//1我是业主
+			if(localStorage.getItem('routerHome') == 1) { //1我是业主
 				this.Rentin = false;
 				this.landlord = true;
-			}else{
+			} else {
 				return;
 			}
-			
+
 		},
 		//缓存之后会执行
-//		 watch:{
-//			  $route(to,from){
-//			    this.addressId = this.$route.params.text || "您想住哪里";
-//				this.addressType = this.$route.params.type || "";
-//			  }
-//			},
-		activated(){
-			console.log('执行了');	
+		//		 watch:{
+		//			  $route(to,from){
+		//			    this.addressId = this.$route.params.text || "您想住哪里";
+		//				this.addressType = this.$route.params.type || "";
+		//			  }
+		//			},
+		activated() {
+			console.log('执行了');
 			//console.log(localStorage.getItem('routerHome'))
-			
+
 		},
 		methods: {
 			//点击消息
@@ -481,8 +502,8 @@
 				} else {
 					this.Rentin = true;
 					this.landlord = false;
-					eventVue.$emit("userDefinedEvent",0)
-					localStorage.setItem('routerHome',0)//控制导航和首页显示
+					eventVue.$emit("userDefinedEvent", 0)
+					localStorage.setItem('routerHome', 0) //控制导航和首页显示
 				}
 			},
 			//点击我是房东
@@ -493,35 +514,35 @@
 					this.Rentin = false;
 					this.landlord = true;
 					this.ownerFirstShow = true;
-					eventVue.$emit("userDefinedEvent",1)
-					localStorage.setItem('routerHome',1)
+					eventVue.$emit("userDefinedEvent", 1)
+					localStorage.setItem('routerHome', 1)
 				}
 			},
 			//点击进入搜索结果
 			tapSearchEnd: function() {
 				console.log(23123)
-				if(this.addressType == ""){
+				if(this.addressType == "") {
 					this.$router.push({
 						path: '/searchEnd'
 					});
-				}else{//用户选择了地址
+				} else { //用户选择了地址
 					this.$router.push({
 						name: 'searchEnd',
 						params: {
-				           text: that.addressId,
+							text: that.addressId,
 							type: that.addressType
-				          }
+						}
 					});
 				}
-				
+
 			},
 			//点击差号清空地址
-			eliminateTap:function(){
+			eliminateTap: function() {
 				this.$router.replace({
 					path: '/homePage'
 				});
 				this.addressId = "您想住哪里";
-				this.addressType = "";	
+				this.addressType = "";
 			},
 			//点击问卷调查
 			questionnaireTap: function() {
@@ -712,7 +733,6 @@
 		right: 0;
 		padding-top: 0.88rem;
 		font-size: 0.24rem;
-
 	}
 	
 	.home_hander {
@@ -747,7 +767,6 @@
 		float: left;
 		text-align: center;
 		position: relative;
-			
 	}
 	
 	.mine_renting b,
@@ -799,7 +818,7 @@ top:25rem;
 	.home_mine_renting,
 	.home_mine_landlord {
 		padding-top: 1.08rem;
-			padding-bottom: 0.98rem;
+		padding-bottom: 0.98rem;
 	}
 	
 	.home_mine_renting .renting_top {
@@ -1342,10 +1361,14 @@ top:25rem;
 		z-index: 8;
 		background: rgba(0, 0, 0, 0.3);
 	}
-	.router-slid-enter-active, .router-slid-leave-active {
-        transition: transform .2s;
-    }
-    .router-slid-enter, .router-slid-leave-active {
-        transform: translate3d(100%, 0, 0);
-    }
+	
+	.router-slid-enter-active,
+	.router-slid-leave-active {
+		transition: transform .2s;
+	}
+	
+	.router-slid-enter,
+	.router-slid-leave-active {
+		transform: translate3d(100%, 0, 0);
+	}
 </style>

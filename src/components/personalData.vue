@@ -12,6 +12,7 @@
 		<div class='topPhoto'>
 			<div class='images'>
 				<!--bindtap='photoTap' <image class='absoloatImg' src='../../resources/restImg/ic_user_camera.png'></image> -->
+				<input type="file" v-on:change='previewFile' />
 				<img class="absoloatImg" src="../assets/image/ic_user_camera.png" />
 				<img class='headImg' src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTILaybAfrFF6Dz3xicIQVFJCAhK1JW4z6QwxnlmibS43MTEZbJWWJhDT5D6PQicRmrht9pUz5qn3eyqQ/0' />
 			</div>
@@ -167,6 +168,10 @@
 			refresh: function() {
 				window.history.go(-1)
 			},
+			//点击拍照
+			previewFile: function(e) {
+				console.log(e)
+			},
 			//点击选择生日
 			birthdayTap: function() {
 				this.show1 = true;
@@ -262,7 +267,13 @@
 		margin: 0 auto;
 		position: relative;
 	}
-	
+	.topPhoto .images input{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 100;
+	}
 	.topPhoto b {
 		display: block;
 		text-align: center;

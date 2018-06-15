@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="startMain">
 			<div class="tartTop">
-				<img src="../../dist/static/img/img_suit_picture.0253d0f.png"/>
+				<img src="../assets/img_suit_picture.png"/>
 				<span>SUIT</span>
 			</div>
 			<p>先随便先随便来一句来一句话</p>

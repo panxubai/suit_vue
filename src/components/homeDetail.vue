@@ -1,5 +1,13 @@
 <template>
-	<div class="container">
+	<div class="container container1"  @scroll="paperScroll">
+		<div class="headerS">
+			<div class="backs" @click="refresh">
+				<img src="../assets/image/ic_topbar_return.png" />
+			</div>
+			<div class="headerTitle">房屋详情</div>
+			<div class="information">
+			</div>
+		</div>
 		<!--轮播-->
 		<div class="swipeDiv">
 			<img class="backImg" @click="refresh" src="../assets/image/ic_topbar_return_w.png" />
@@ -224,6 +232,7 @@
 </template>
 
 <script>
+	var that;
 	export default {
 
 		data() {
@@ -238,8 +247,12 @@
 				ageBigValue: "",//年龄
 				activeIndex:1,//swper当前索引
 				shareShow:false,//分享功能
+				opacityH:0
 			}
 		},
+		created: function () {
+		that = this;
+    },
 		mounted() {
 
 			var data = {　　　　　　
@@ -270,6 +283,9 @@
 		methods: {
 			refresh: function() {
 				window.history.go(-1)
+			},
+			paperScroll:function(e){
+				$(".headerS").css("opacity",($('.container1').scrollTop()-50)*0.01)
 			},
 			//轮播索引
 			 handleChange:function(index){
@@ -381,7 +397,9 @@
         bottom: 0;
         overflow-y:scroll; 
 	}
-	
+	.headerS{
+		opacity: 0;
+	}
 	a {
 		text-decoration: none;
 	}
