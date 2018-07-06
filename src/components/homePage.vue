@@ -24,7 +24,7 @@
 			</div>
 			<!--<div class='mine_new'>
 
-				<img src='https://www.suitius.com/image/resources/ic_topbar_information.png' />
+				<img src='../assets/resources/ic_topbar_information.png' />
 				<p></p>
 			</div>-->
 		</div>
@@ -44,7 +44,7 @@
 							<img class="icon1" src="../assets/ic_search.png" />
 							<div class='searchTiao'>{{addressId}}</div>
 						</router-link>
-						<img class="chahao1" src='https://www.suitius.com/image/resources/ic_search_closs.png' @click="eliminateTap" />
+						<img class="chahao1" src='../assets/resources/ic_search_closs.png' @click="eliminateTap" />
 					</div>
 				</div>
 			</div>
@@ -118,16 +118,16 @@
 									<span>tem.titlnem.contenee</span>
 									<p>em.conem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenten</p>
 									<div class='commentIcon'>
-										<img src='https://www.suitius.com/image/resources/ic_comment_n.png' />
+										<img src='../assets/resources/ic_comment_n.png' />
 										<b>100</b>
 									</div>
 									<div class='transmitIcon' bindtap='transmitTap'>
-										<img src='https://www.suitius.com/image/resources/ic_transpond_n.png' />
+										<img src='../assets/resources/ic_transpond_n.png' />
 										<b>100</b>
 									</div>
 								</div>
 								<div class='articleImg_right'>
-									<img src='https://www.suitius.com/image/resources/ic_transpond_n.png' />
+									<img src='../assets/resources/ic_transpond_n.png' />
 								</div>
 							</router-link>
 						</div>
@@ -137,16 +137,16 @@
 								<span>tem.titlnem.contenee</span>
 								<p>em.conem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenem.contenten</p>
 								<div class='commentIcon'>
-									<img src='https://www.suitius.com/image/resources/ic_comment_n.png' />
+									<img src='../assets/resources/ic_comment_n.png' />
 									<b>100</b>
 								</div>
 								<div class='transmitIcon' bindtap='transmitTap'>
-									<img src='https://www.suitius.com/image/resources/ic_transpond_n.png' />
+									<img src='../assets/resources/ic_transpond_n.png' />
 									<b>100</b>
 								</div>
 							</div>
 							<div v-show="false" class='articleImg_right'>
-								<img src='https://www.suitius.com/image/resources/ic_transpond_n.png' />
+								<img src='../assets/resources/ic_transpond_n.png' />
 							</div>
 						</div>
 
@@ -159,31 +159,31 @@
 
 		<div class="home_mine_landlord" v-show="landlord">
 			<div class='noticeImg' @click='noticeShadowTap'>
-				<img src='https://www.suitius.com/image/resources/img_cooperation.png' />
+				<img src='../assets/resources/img_cooperation.png' />
 			</div>
 
 			<div class='checkHome' @click='checkHomeTap(1)'>
 				<div class='iconImg'>
-					<img src='https://www.suitius.com/image/resources/ic_home_register.png' />
+					<img src='../assets/resources/ic_home_register.png' />
 				</div>
 				<div class='checkName'>
 					<b>登记房屋</b>
 					<p>免费发布房源，海量客源等你来</p>
 				</div>
 				<div class='checkJT'>
-					<img src='https://www.suitius.com/image/resources/homeDetail/ic_more_down.png' />
+					<img src='../assets/resources/homeDetail/ic_more_down.png' />
 				</div>
 			</div>
 			<div class='checkHome' @click='checkHomeTap(2)'>
 				<div class='iconImg'>
-					<img src='https://www.suitius.com/image/resources/ic_home_house.png' />
+					<img src='../assets/resources/ic_home_house.png' />
 				</div>
 				<div class='checkName'>
 					<b>我的房屋</b>
 					<p>智能管理,安全的线上交易</p>
 				</div>
 				<div class='checkJT'>
-					<img src='https://www.suitius.com/image/resources/homeDetail/ic_more_down.png' />
+					<img src='../assets/resources/homeDetail/ic_more_down.png' />
 				</div>
 			</div>
 
@@ -196,13 +196,13 @@
 					<p>正在审核中</p>
 				</div>
 				<div class='checkJT'>
-					<img src='https://www.suitius.com/image/resources/homeDetail/ic_more_down.png' />
+					<img src='../assets/resources/homeDetail/ic_more_down.png' />
 				</div>
 			</div>
 		</div>
 		<!--弹出层所有-->
 		<div class='noticeShadow' v-show="noticeShadowShow">
-			<img src='https://www.suitius.com/image/resources/ic_close.png' @click='noticeShadowHideTap' />
+			<img src='../assets/resources/ic_close.png' @click='noticeShadowHideTap' />
 			<div class='text'>
 				<p>合作须知</p>
 				<b>
@@ -218,7 +218,7 @@
 		<div class='tipsWindown' v-show="ownerFirstShow" @click='hidenTipTap'></div>
 		<div class='expectationss' v-show="ownerFirstShow">
 			<p>请进行业主身份验证</p>
-			<img class='chahao' src='https://www.suitius.com/image/resources/homeDetail/ic_pop_close.png' @click='hidenTipTap' />
+			<img class='chahao' src='../assets/resources/homeDetail/ic_pop_close.png' @click='hidenTipTap' />
 			<div class='fillList fillPhoto'>
 				<img src='../assets/ic_landlord_phone.png' />
 				<input type='number' placeholder='请输入手机号' oninput='if(value.length>11)value=value.slice(0,11)' v-on:input="photoInput" maxlength='11' placeholder-style="color:#9B9B9B" v-model='photoNumber' />
@@ -617,12 +617,22 @@
 				this.show6 = false;
 			},
 			confirmFn1: function(data) {
-				this.arrayCity.default[0].text = data.select1.text;
-				this.arrayCity.default[0].value = data.select1.value;
-				this.budgetMinrYes = data.select1.text;
-				this.showDiv1 = false;
-				this.show1 = false;
-
+				if(this.budgetMaxrYes == "不限" || this.budgetMaxrYes > data.select1.text){
+					this.arrayCity.default[0].text = data.select1.text;
+					this.arrayCity.default[0].value = data.select1.value;
+					this.budgetMinrYes = data.select1.text;
+					this.showDiv1 = false;
+					this.show1 = false;
+				}else{
+					this.arrayCity.default[0].text = data.select1.text;
+					this.arrayCity.default[0].value = data.select1.value;
+					this.budgetMinrYes = data.select1.text;
+					this.budgetLitter.default[0].text = "不限";
+					this.budgetLitter.default[0].value = 0;
+					this.budgetMaxrYes = "不限";
+					this.showDiv1 = false;
+					this.show1 = false;
+				}
 			},
 			//价钱大
 			budgetingMax: function() {
@@ -631,11 +641,23 @@
 			},
 
 			confirmFn2: function(data) {
-				this.budgetLitter.default[0].text = data.select1.text;
-				this.budgetLitter.default[0].value = data.select1.value;
-				this.budgetMaxrYes = data.select1.text;
-				this.showDiv1 = false;
-				this.show2 = false;
+				if(this.budgetMinrYes == "不限" || this.budgetMinrYes < data.select1.text){
+					this.budgetLitter.default[0].text = data.select1.text;
+					this.budgetLitter.default[0].value = data.select1.value;
+					this.budgetMaxrYes = data.select1.text;
+					this.showDiv1 = false;
+					this.show2 = false;
+				}else{
+					this.budgetLitter.default[0].text = data.select1.text;
+					this.budgetLitter.default[0].value = data.select1.value;
+					this.budgetMaxrYes = data.select1.text;
+					this.arrayCity.default[0].text = "不限";
+					this.arrayCity.default[0].value = 0;
+					this.budgetMinrYes = "不限";
+					this.showDiv1 = false;
+					this.show2 = false;
+				}
+				
 
 			},
 			//装修风格
@@ -845,9 +867,11 @@ top:25rem;
 		float: left;
 		position: relative;
 	}
-	
+	.home_hander {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
 	.searchCity b {
-		font-size: 0.36rem;
+		font-size: 0.32rem;
 		color: #222222;
 		line-height: 0.8rem;
 	}

@@ -12,17 +12,17 @@
 			<div class='rentingWhat'>
 				<b>您遇到的问题类型</b>
 				<div class='rentingYes' data-index='1' @click='rentingWhatTap'>
-					<img v-if="rentingIndex == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='1' />
-					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1' /> 产品意见
+					<img v-if="rentingIndex == 1" src='../assets/resources/questionnaire/ic_boy6.png' data-index='1' />
+					<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='1' /> 产品意见
 				</div>
 				<div class='rentingNo' data-index='2' @click='rentingWhatTap'>
-					<img v-if="rentingIndex == 2" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='2' />
-					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='2' /> 功能
+					<img v-if="rentingIndex == 2" src='../assets/resources/questionnaire/ic_boy6.png' data-index='2' />
+					<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='2' /> 功能
 				</div>
 
 				<div class='rentingNoYes' data-index='3' @click='rentingWhatTap'>
-					<img v-if="rentingIndex == 3" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='3' />
-					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='3' /> 其他
+					<img v-if="rentingIndex == 3" src='../assets/resources/questionnaire/ic_boy6.png' data-index='3' />
+					<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='3' /> 其他
 				</div>
 			</div>
 
@@ -38,7 +38,7 @@
 					<div class="scrollGd">
 						<div class='headList'>
 							<img src='../assets/ic_user_camera.png' class='images' />
-							<!--<img class='delImg' src='https://www.suitius.com/image/resources/ic_search_closs.png'/>-->
+							<!--<img class='delImg' src='../assets/resources/ic_search_closs.png'/>-->
 						</div>
 						<div class='tapPhoto'>
 							<input type="file" v-on:change='previewFile' />

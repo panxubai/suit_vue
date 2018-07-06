@@ -17,7 +17,7 @@
       </div>
       <div class='journeyBottom'>
         <a>查看详情</a>
-        <img src='https://www.suitius.com/image/resources/ic_more.png'/>
+        <img src='../assets/resources/ic_more.png'/>
       </div>
   </div>
   <!-- 已度过 -->
@@ -29,7 +29,7 @@
       </div>
       <div class='journeyBottom'>
         <a>查看详情</a>
-        <img src='https://www.suitius.com/image/resources/ic_more.png'/>
+        <img src='../assets/resources/ic_more.png'/>
       </div>
   </div>
 

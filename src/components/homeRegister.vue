@@ -19,7 +19,7 @@
 					<div class="scrollGd">
 						<div class='headList'>
 							<img src='../assets/ic_user_camera.png' class='images' />
-							<img class='delImg' src='https://www.suitius.com/image/resources/ic_search_closs.png' />
+							<img class='delImg' src='../assets/resources/ic_search_closs.png' />
 						</div>
 						<div class='tapPhoto'>
 							<img class='absoloatImg' src='../assets/ic_user_camera.png' />
@@ -34,8 +34,8 @@
 				<div class='propertyImg'>
 
 					<!--<div  class='headList'>
-            <img src='https://www.suitius.com/image/resources/ic_search_closs.png'   class='images'  />
-            <img class='delImg' src='https://www.suitius.com/image/resources/ic_search_closs.png' />
+            <img src='../assets/resources/ic_search_closs.png'   class='images'  />
+            <img class='delImg' src='../assets/resources/ic_search_closs.png' />
         </div>-->
 					<div class='tapPhoto'>
 						<img class='absoloatImg' src='../assets/ic_user_camera.png' />

@@ -9,7 +9,7 @@
 				<router-link to="/searchs1">
 					<div class='searchs'> {{addressEnd}}</div>
 				</router-link>
-				<img class="chahaos" @click="eliminateTap" src='https://www.suitius.com/image/resources/ic_search_closs.png' />
+				<img class="chahaos" @click="eliminateTap" src='../assets/resources/ic_search_closs.png' />
 
 			</div>
 			<div class='screenMain' style="z-index:25;">
@@ -79,14 +79,14 @@
 					<div class='rightMain'>
 						<p>好日子大家园</p>
 						<div class='nameImgPic'>
-							<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
+							<img src='../assets/resources/ic_list_sign.png'>
 							<span>潘旭白</span>
 							<b>60000<a>元/月</a></b>
 
 						</div>
 						<h6>三室一厅㎡</h6>
 						<div class='addessSum'>
-							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+							<img src='../assets/resources/ic_list_sign.png' />
 							<span>距离江湾体育场3km</span>
 						</div>
 					</div>

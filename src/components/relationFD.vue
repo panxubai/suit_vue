@@ -16,14 +16,14 @@
 				<div class='rightMain'>
 					<p>好日子大家园</p>
 					<div class='nameImgPic'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
+						<img src='../assets/resources/ic_list_sign.png'>
 						<span>潘旭白</span>
 						<b>60000<a>元/月</a></b>
 
 					</div>
 					<h6>三室一厅㎡</h6>
 					<div class='addessSum'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						<img src='../assets/resources/ic_list_sign.png' />
 						<span>距离江湾体育场3km</span>
 					</div>
 				</div>
@@ -274,6 +274,7 @@ if(i == 0){
 <style scoped>
 	.container{
 		padding-top: 0.88rem;
+		padding-bottom: 0 !important;
 		z-index: 110;
 		 position: fixed;
 		top: 0;
@@ -486,15 +487,15 @@ if(i == 0){
 	}
 	
 	.sumitBtn {
-		width: 100%;
-		height: 0.98rem;
+		width: 6.7rem;
+		height: 0.88rem;
 		background: #F5A623;
+		border-radius: 0.6rem;
 		font-size: 0.36rem;
 		color: #FFFFFF;
 		text-align: center;
-		line-height: 0.98rem;
-		position: fixed;
-		bottom: 0;left: 0;
+		line-height: 0.88rem;
+		margin:0.35rem auto;
 	}
 	
 	.dialog-mask {

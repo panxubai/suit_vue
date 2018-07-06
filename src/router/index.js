@@ -53,10 +53,6 @@ export default new Router({
 			name: 'article',
 			component: Article
 		}, {
-			path: '/selectCity',
-			name: 'selectCity',
-			component: SelectCity
-		}, {
 			path: '/login',
 			name: 'login',
 			component: Login,
@@ -90,6 +86,10 @@ export default new Router({
 				name: 'searchs',
 				component: Searchs
 			}, {
+			path: '/selectCity',
+			name: 'selectCity',
+			component: SelectCity
+		}, {
 				path: '/myHome',
 				name: 'myHome',
 				component: MyHome,

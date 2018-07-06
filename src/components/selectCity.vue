@@ -41,9 +41,16 @@
 
 <style scoped>
 	.container {
-		width: 6.7rem;
+		width: 100%;
 		margin: 0 auto;
-		padding-top: 0.88rem;
+		padding: 0.88rem 0.3rem 0;
+		z-index: 100;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);

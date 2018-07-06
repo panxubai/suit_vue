@@ -83,29 +83,29 @@
 				<div class='petWhat'>
 					<b>是否接受宠物</b>
 					<div class='petYes' data-index='0' @click='petWhatTap'>
-						<img v-if="petIndex == 0" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='1' />
-						<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='0'> 是
+						<img v-if="petIndex == 0" src='../assets/resources/questionnaire/ic_boy6.png' data-index='1' />
+						<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='0'> 是
 					</div>
 					<div class='petNo' data-index='1' @click='petWhatTap'>
-						<img v-if="petIndex == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='1' />
-						<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1' /> 否
+						<img v-if="petIndex == 1" src='../assets/resources/questionnaire/ic_boy6.png' data-index='1' />
+						<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='1' /> 否
 					</div>
 				</div>
 
 				<div class='rentingWhat'>
 					<b>选择租房方式</b>
 					<div class='rentingYes' data-index='0' @click='rentingWhatTap'>
-						<img v-if="rentingIndex == 0" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='0' />
-						<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='0' /> 整租
+						<img v-if="rentingIndex == 0" src='../assets/resources/questionnaire/ic_boy6.png' data-index='0' />
+						<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='0' /> 整租
 					</div>
 					<div class='rentingNo' data-index='1' @click='rentingWhatTap'>
-						<img v-if="rentingIndex == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='1' />
-						<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1' /> 合租
+						<img v-if="rentingIndex == 1" src='../assets/resources/questionnaire/ic_boy6.png' data-index='1' />
+						<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='1' /> 合租
 					</div>
 
 					<div class='rentingNoYes' data-index='2' @click='rentingWhatTap'>
-						<img v-if="rentingIndex == 2" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='2' />
-						<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='2' /> 皆可
+						<img v-if="rentingIndex == 2" src='../assets/resources/questionnaire/ic_boy6.png' data-index='2' />
+						<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='2' /> 皆可
 					</div>
 				</div>
 
@@ -114,28 +114,28 @@
 					<div class='typeFlex'>
 						<div class='typeList' data-index='0' @click='typeScreetTap'>
 							<p data-index='0'>单身</p>
-							<img data-index='0' v-if="typeArray[0] == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
-							<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='0' />
+							<img data-index='0' v-if="typeArray[0] == 1" src='../assets/resources/questionnaire/ic_boy6.png' />
+							<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='0' />
 						</div>
 						<div class='typeList' data-index='1' @click='typeScreetTap'>
 							<p data-index='1'>情侣</p>
-							<img data-index='1' v-if="typeArray[1] == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
-							<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1' />
+							<img data-index='1' v-if="typeArray[1] == 1" src='../assets/resources/questionnaire/ic_boy6.png' />
+							<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='1' />
 						</div>
 						<div class='typeList' data-index='2' @click='typeScreetTap'>
 							<p data-index='2'>家庭</p>
-							<img data-index='2' v-if="typeArray[2] == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
-							<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='2' />
+							<img data-index='2' v-if="typeArray[2] == 1" src='../assets/resources/questionnaire/ic_boy6.png' />
+							<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='2' />
 						</div>
 						<div class='typeList' data-index='3' @click='typeScreetTap'>
 							<p data-index='3'>朋友</p>
-							<img data-index='3' v-if="typeArray[3] == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
-							<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='3' />
+							<img data-index='3' v-if="typeArray[3] == 1" src='../assets/resources/questionnaire/ic_boy6.png' />
+							<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='3' />
 						</div>
 						<div class='typeList' data-index='4' @click='typeScreetTap'>
 							<p data-index='4'>其他</p>
-							<img data-index='4' v-if="typeArray[4] == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
-							<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='4' />
+							<img data-index='4' v-if="typeArray[4] == 1" src='../assets/resources/questionnaire/ic_boy6.png' />
+							<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='4' />
 						</div>
 					</div>
 				</div>
@@ -180,97 +180,97 @@
 			<div class='facilityImg'>
 				<div class='imgList' data-index='0' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[0] == 0" src='../assets/ic_suite_kongt_n.png' data-index='0' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony9.png' data-index='0' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony9.png' data-index='0' />
 					<a data-index='0'>空调</a>
 				</div>
 				<div class='imgList' data-index='1' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[1] == 0" src='../assets/ic_suite_tv_n.png' data-index='1' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony15.png' data-index='1' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony15.png' data-index='1' />
 					<a data-index='1'>电视</a>
 				</div>
 				<div class='imgList' data-index='2' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[2] == 0" src='../assets/ic_suite_wardrobe_n.png' data-index='2' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony16.png' data-index='2' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony16.png' data-index='2' />
 					<a data-index='2'>衣柜</a>
 				</div>
 				<div class='imgList' data-index='3' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[3] == 0" src='../assets/ic_suite_washer_n.png' data-index='3' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony17.png' data-index='3' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony17.png' data-index='3' />
 					<a data-index='3'>洗衣机</a>
 				</div>
 				<div class='imgList' data-index='4' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[4] == 0" src='../assets/ic_suite_refrigerator_n.png' data-index='4' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony12.png' data-index='4' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony12.png' data-index='4' />
 					<a data-index='4'>冰箱</a>
 				</div>
 				<div class='imgList' data-index='5' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[5] == 0" src='../assets/ic_suite_water_heater_n.png' data-index='5' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony18.png' data-index='5' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony18.png' data-index='5' />
 					<a data-index='5'>热水器</a>
 				</div>
 				<div class='imgList' data-index='6' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[6] == 0" src='../assets/ic_suite_bed_n.png' data-index='6' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony2.png' data-index='6' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony2.png' data-index='6' />
 					<a data-index='6'>床</a>
 				</div>
 				<div class='imgList' data-index='7' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[7] == 0" src='../assets/ic_suite_sofa_n.png' data-index='7' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony13.png' data-index='7' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony13.png' data-index='7' />
 					<a data-index='7'>沙发</a>
 				</div>
 				<div class='imgList' data-index='8' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[8] == 0" src='../assets/ic_suite_desk_n.png' data-index='8' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony6.png' data-index='8' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony6.png' data-index='8' />
 					<a data-index='8'>桌子</a>
 				</div>
 				<div class='imgList' data-index='9' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[9] == 0" src='../assets/ic_suite_hearth_n.png' data-index='9' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony8.png' data-index='9' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony8.png' data-index='9' />
 					<a data-index='9'>煤气灶</a>
 				</div>
 				<div class='imgList' data-index='10' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[10] == 0" src='../assets/ic_suite_cooker_hood_n.png' data-index='10' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony5.png' data-index='10' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony5.png' data-index='10' />
 					<a data-index='10'>油烟机</a>
 				</div>
 				<div class='imgList' data-index='11' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[11] == 0" src='../assets/ic_suite_chair_n.png' data-index='11' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony4.png' data-index='11' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony4.png' data-index='11' />
 					<a data-index='11'>椅子</a>
 				</div>
 				<div class='imgList' data-index='12' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[12] == 0" src='../assets/ic_suite_bedside_table_n.png' data-index='12' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony3.png' data-index='12' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony3.png' data-index='12' />
 					<a data-index='12'>床头柜</a>
 				</div>
 				<div class='imgList' data-index='13' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[13] == 0" src='../assets/ic_suite_mattress_n.png' data-index='13' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony11.png' data-index='13' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony11.png' data-index='13' />
 					<a data-index='13'>床垫</a>
 				</div>
 				<div class='imgList' data-index='14' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[14] == 0" src='../assets/ic_suite_wifi_n.png' data-index='14' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony19.png' data-index='14' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony19.png' data-index='14' />
 					<a data-index='14'>WiFi</a>
 				</div>
 				<div class='imgList' data-index='15' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[15] == 0" src='../assets/ic_suite_lock_n.png' data-index='15' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony10.png' data-index='15' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony10.png' data-index='15' />
 					<a data-index='15'>智能锁</a>
 				</div>
 				<div class='imgList' data-index='16' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[16] == 0" src='../assets/ic_suite_balcony_n.png' data-index='16' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony1.png' data-index='16' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony1.png' data-index='16' />
 					<a data-index='16'>阳台</a>
 				</div>
 				<div class='imgList' data-index='17' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[17] == 0" src='../assets/ic_suite_toilet_n.png' data-index='17' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony14.png' data-index='17' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony14.png' data-index='17' />
 					<a>卫生间</a>
 				</div>
 				<div class='imgList' data-index='18' @click='facilitiesTap'>
 					<img v-if="facilitiesArr[18] == 0" src='../assets/ic_suite_garden_n.png' data-index='18' />
-					<img v-else src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony7.png' data-index='18' />
+					<img v-else src='../assets/resources/homeDetail/ic_suite_balcony7.png' data-index='18' />
 					<a data-index='18'>花园</a>
 				</div>
 			</div>

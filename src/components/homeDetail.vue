@@ -1,11 +1,11 @@
 <template>
 	<div class="container container1"  @scroll="paperScroll">
-		<div class="headerS">
+		<div class="headerS headerDetail" v-show="headersShw">
 			<div class="backs" @click="refresh">
 				<img src="../assets/image/ic_topbar_return.png" />
 			</div>
 			<div class="headerTitle">房屋详情</div>
-			<div class="information">
+			<div class="information" >
 			</div>
 		</div>
 		<!--轮播-->
@@ -13,9 +13,9 @@
 			<img class="backImg" @click="refresh" src="../assets/image/ic_topbar_return_w.png" />
 			<img class="fenxiangImg" @click="shareOpen" src="../assets/image/ic_topbar_transpond_w.png" />
 			<mt-swipe ref="swipe" :auto="4000" :show-indicators="false" @change="handleChange">
-				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" /></mt-swipe-item>
-				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" /></mt-swipe-item>
-				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" /></mt-swipe-item>
+				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" preview="0"/></mt-swipe-item>
+				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" preview="0"/></mt-swipe-item>
+				<mt-swipe-item><img src="https://www.suitius.com/tp5/public/uploads/houseimg/5ac2ed879a29e.jpg" preview="0"/></mt-swipe-item>
 			</mt-swipe>
 			<span>{{activeIndex}}/3</span>
 		</div>
@@ -33,9 +33,9 @@
 
 		<div class='ownerHome'>
 			<div class='ownerPhone'>
-				<img class='imageFace' src='https://www.suitius.com/image/resources/homeDetail/ic_suite_contact.png' />
+				<img class='imageFace' src='../assets/resources/homeDetail/ic_suite_contact.png' />
 				<span>homeArray.ca</span>
-				<p @click="relationTap"><img src='https://www.suitius.com/image/resources/homeDetail/ic_suite_contact.png' />联系业主</p>
+				<p @click="relationTap"><img src='../assets/resources/homeDetail/ic_suite_contact.png' />联系业主</p>
 			</div>
 			<div class='homeReferral'>
 				<p>房屋介绍</p>
@@ -65,7 +65,7 @@
 				<p>配套设施</p>
 				<div class='facilityImg'>
 					<div class='imgList'>
-						<img src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony9.png' />
+						<img src='../assets/resources/homeDetail/ic_suite_balcony9.png' />
 						<a>空调</a>
 					</div>
 
@@ -78,11 +78,11 @@
 			<div class='flatTop'>
 				合租室友推荐
 				<div class='questionDiv' @click='questionTap'>
-					<img class='question' src='https://www.suitius.com/image/resources/homeDetail/ic_suit_question.png' />
+					<img class='question' src='../assets/resources/homeDetail/ic_suit_question.png' />
 				</div>
 				<b @click='showtapSd'>
         设定
-        <img src='https://www.suitius.com/image/resources/homeDetail/ic_more_down.png'/>
+        <img src='../assets/resources/homeDetail/ic_more_down.png'/>
       </b>
 			</div>
 			<p  v-show="taolunzuShow">你对室友的期望是？</p>
@@ -93,34 +93,34 @@
 						<!--<P wx:if="{{peopleArr.length == 0}}">没有搜索到合租室友哦，请更换条件重新搜索哦</P>-->
 						<div class='headList'>
 
-							<img src="https://www.suitius.com/image/resources/homeDetail/ic_more_down.png" />
+							<img src="../assets/resources/homeDetail/ic_more_down.png" />
 							<span>tem.call</span>
 							<div class='shadow'>
-								<img src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
+								<img src='../assets/resources/questionnaire/ic_boy6.png' />
 							</div>
 						</div>
 						<div class='headList'>
 
-							<img src="https://www.suitius.com/image/resources/homeDetail/ic_more_down.png" />
+							<img src="../assets/resources/homeDetail/ic_more_down.png" />
 							<span>tem.call</span>
 							<div class='shadow'>
-								<img src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
+								<img src='../assets/resources/questionnaire/ic_boy6.png' />
 							</div>
 						</div>
 						<div class='headList'>
 
-							<img src="https://www.suitius.com/image/resources/homeDetail/ic_more_down.png" />
+							<img src="../assets/resources/homeDetail/ic_more_down.png" />
 							<span>tem.call</span>
 							<div class='shadow'>
-								<img src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
+								<img src='../assets/resources/questionnaire/ic_boy6.png' />
 							</div>
 						</div>
 						<div class='headList'>
 
-							<img src="https://www.suitius.com/image/resources/homeDetail/ic_more_down.png" />
+							<img src="../assets/resources/homeDetail/ic_more_down.png" />
 							<span>tem.call</span>
 							<div class='shadow'>
-								<img src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' />
+								<img src='../assets/resources/questionnaire/ic_boy6.png' />
 							</div>
 						</div>
 					</div>
@@ -132,7 +132,7 @@
 		<div class='mapMain'>
 			<p>地理位置</p>
 			<span>
-        <img src='https://www.suitius.com/image/resources/ic_list_sign.png'/>
+        <img src='../assets/resources/ic_list_sign.png'/>
          omeArray.house_info.m
      </span>
 			<div id="maps" style="width: 100%; height: 3.3rem;"></div>
@@ -160,7 +160,7 @@
 		<!--分享功能-->
 		<div class='tipsWindown' v-show="shareShow" @click="shareClose"></div>
 		<div class="shareGn">
-			<img class='chahao' @click="shareClose" src='https://www.suitius.com/image/resources/homeDetail/ic_pop_close.png'/>
+			<img class='chahao' @click="shareClose" src='../assets/resources/homeDetail/ic_pop_close.png'/>
 			<p>分享房屋</p>
 			<ul>
 				<li>
@@ -194,7 +194,7 @@
 		<div class='tipsWindown' v-show="questionShow" @click='yesTapCh'></div>
 		<div class='expectationss' v-show="questionShow">
 			<p>合租室友推荐是什么？</p>
-			<!-- <img class='chahao' src='https://www.suitius.com/image/resources/homeDetail/ic_pop_close.png' @click='yesTapCh'/>-->
+			<!-- <img class='chahao' src='../assets/resources/homeDetail/ic_pop_close.png' @click='yesTapCh'/>-->
 			<b>可以筛选出你想合租的室友,选中后可以创建讨论组,一起商量合租等事宜。</b>
 			<div class='buttonsumss' @click='yesTapCh'>知道了</div>
 		</div>
@@ -203,7 +203,7 @@
 		<div class='tipsWindown' v-show="tipsWindownMenuIsShow" @click='hidenTipTap'></div>
 		<div class='expectation' v-show="tipsWindownMenuIsShow">
 			<p>你对室友的期望是？</p>
-			<!--<img class='chahao' src='https://www.suitius.com/image/resources/homeDetail/ic_pop_close.png' @click='hidenTipTap'/>-->
+			<!--<img class='chahao' src='../assets/resources/homeDetail/ic_pop_close.png' @click='hidenTipTap'/>-->
 			<div class='sumList'>
 				<div class='gender margins'>
 					<span>性别</span>
@@ -233,10 +233,18 @@
 
 <script>
 	var that;
+	var options={
+				fullscreenEl:false //关闭全屏按钮
+			}
+	import Vue from 'vue'
+	import preview from 'vue-photo-preview'
+	import 'vue-photo-preview/dist/skin.css'
+	Vue.use(preview,options)
 	export default {
 
 		data() {
 			return {
+				headersShw:false,
 				questionShow: false,//点击问号
 				tipsWindownMenuIsShow: false,//对势有的期望
 				enshrineS:false,//true收藏false不受藏
@@ -285,7 +293,12 @@
 				window.history.go(-1)
 			},
 			paperScroll:function(e){
-				$(".headerS").css("opacity",($('.container1').scrollTop()-50)*0.01)
+				if($('.container1').scrollTop()>=$('.headerDetail').height()){
+					that.headersShw = true
+				}else{
+					that.headersShw = false
+				}
+				$(".headerDetail").css("opacity",($('.container1').scrollTop()-$('.headerDetail').height())*0.01)
 			},
 			//轮播索引
 			 handleChange:function(index){
@@ -428,7 +441,9 @@
 		z-index: 9;
 		left: 0.33rem;
 	}
-	
+	.headerS {
+		box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
+	}
 	.fenxiangImg {
 		width: 0.48rem;
 		height: 0.48rem;

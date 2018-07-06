@@ -16,14 +16,14 @@
 				<div class='rightMain'>
 					<p>好日子大家园</p>
 					<div class='nameImgPic'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
+						<img src='../assets/resources/ic_list_sign.png'>
 						<span>潘旭白</span>
 						<b>60000<a>元/月</a></b>
 
 					</div>
 					<h6>三室一厅㎡</h6>
 					<div class='addessSum'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						<img src='../assets/resources/ic_list_sign.png' />
 						<span>距离江湾体育场3km</span>
 					</div>
 				</div>
@@ -43,13 +43,13 @@
                     </div>
                 </div>
                 <div class='headPortrait'>
-                    <img src='https://www.suitius.com/image/resources/ic_list_sign.png'/>
+                    <img src='../assets/resources/ic_list_sign.png'/>
                 </div>
             </div>
             <!-- 其他人的聊天 -->
              <div class='otherId commons'>
                 <div class='headPortrait'>
-                    <img src='https://www.suitius.com/image/resources/ic_list_sign.png'/>
+                    <img src='../assets/resources/ic_list_sign.png'/>
                 </div>
                 <div class='content'>
                     <b>.name}}</b>
@@ -226,7 +226,7 @@
 	/* 自己发送的消息 */
 .chatBoxes{
   width: 6.90rem;
-  height: 8.23rem;
+  height: 8rem;
   margin: 0 auto;
   overflow-y:auto ;
 }
@@ -355,6 +355,7 @@ color: #FFFFFF;
   box-shadow: 0 -4px 6px 0 rgba(0,0,0,0.08);
   position: fixed;
   bottom: 0;left: 0;
+  background: #fff;
 }
 .inputBox .inputWidth{
   width: 6.90rem;

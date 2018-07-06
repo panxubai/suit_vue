@@ -12,7 +12,7 @@
      <div class='newsList'>
         <div class='keyList' >
             <div class='imgs'>
-                <img src='https://www.suitius.com/image/resources/img_suit_picture.png'></img>
+                <img src='../assets/resources/img_suit_picture.png'></img>
             </div>
             <div class='newsBox'>
                <p>SUIT小秘书</p>

@@ -13,21 +13,21 @@
     <div class='mine_list'> 
               <img class='icon' src='../assets/ic_set_about.png'></img>
               <b>意见反馈</b>
-              <img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+              <img class='arrows' src='../assets/resources/ic_more.png'></img>
          </div>
           </router-link>
          <router-link to="/asregards">
          <div class='mine_list'>    	
               <img class='icon' src='../assets/ic_set_about2.png'></img>
               <b>关于</b>
-              <img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+              <img class='arrows' src='../assets/resources/ic_more.png'></img>
          </div>
          </router-link>
           <router-link to="/changePassword">
          <div class='mine_list'>    	
               <img class='icon' src='../assets/image/ic_set_mima.png'></img>
               <b>修改密码</b>
-              <img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+              <img class='arrows' src='../assets/resources/ic_more.png'></img>
          </div>
          </router-link>
     </div>

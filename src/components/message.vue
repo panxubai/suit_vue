@@ -12,12 +12,12 @@
           <div class='systemNew' data-type='0'>
           	<router-link to="/sultnews">
               <div class='messageImg'>
-                <img class='ic_message' src='https://www.suitius.com/image/resources/ic_message_xitong1.png'></img>
+                <img class='ic_message' src='../assets/resources/ic_message_xitong1.png'></img>
               </div>
               <div class='messagediv'>
                   <p>系统消息</p>
               </div>
-              <img class='ic_more' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+              <img class='ic_more' src='../assets/resources/ic_more.png'></img>
              <!-- <b wx:if="{{newXx.suit>0}}">{{newXx.suit}}</b>-->
              </router-link>
           </div>
@@ -25,36 +25,36 @@
           <div class='journey' data-type='1'>
           	<router-link to="/journeyNews">
                <div class='messageImg'>
-                <img class='ic_message' src='https://www.suitius.com/image/resources/ic_message_xitong2.png'></img>
+                <img class='ic_message' src='../assets/resources/ic_message_xitong2.png'></img>
               </div>
               <div class='messagediv'>
                   <p>行程消息</p>
               </div>
-               <img class='ic_more' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+               <img class='ic_more' src='../assets/resources/ic_more.png'></img>
                <!--  <b wx:if="{{newXx.trip>0}}">{{newXx.trip}}</b>-->
                </router-link>
           </div>
           <div class='usenet'  data-type='2'>
           	<router-link to="/journeyNews">
                <div class='messageImg'>
-                <img class='ic_message' src='https://www.suitius.com/image/resources/ic_message_xitong.png'></img>
+                <img class='ic_message' src='../assets/resources/ic_message_xitong.png'></img>
               </div>
               <div class='messagediv'>
                   <p>讨论组消息</p>
               </div>
-               <img class='ic_more' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+               <img class='ic_more' src='../assets/resources/ic_more.png'></img>
                <!-- <b wx:if="{{newXx.disc>0}}">{{newXx.disc}}</b>-->
                </router-link>
           </div>
            <div class='visit' data-type='3'>
            	<router-link to="/journeyNews">
                <div class='messageImg'>
-               <img class='ic_message' src='https://www.suitius.com/image/resources/ic_message_xitong2.png'></img>
+               <img class='ic_message' src='../assets/resources/ic_message_xitong2.png'></img>
               </div>
               <div class='messagediv'>
                   <p>到访消息</p>
               </div>
-               <img class='ic_more' src='https://www.suitius.com/image/resources/ic_more.png'></img>
+               <img class='ic_more' src='../assets/resources/ic_more.png'></img>
                <!-- <b wx:if="{{newXx.visit>0}}">{{newXx.visit}}</b>-->
                </router-link>
           </div>

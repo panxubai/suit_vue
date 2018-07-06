@@ -17,7 +17,7 @@
 			<router-link to="/visitChat">
 				<div class='routeTop'>
 					<div class='imgName'>
-						<img src='https://www.suitius.com/image/resources/img_suit_picture.png' />
+						<img src='../assets/resources/img_suit_picture.png' />
 						<div class='names'>caller}</div>
 					</div>
 
@@ -41,7 +41,7 @@
 				<div class='routeBottom'>
 					<span> item.access_time</span>
 					<!--  <a wx:if="{{item.on_read != 0}}">{{item.on_read}}</a>-->
-					<img src='https://www.suitius.com/image/resources/ic_more.png' />
+					<img src='../assets/resources/ic_more.png' />
 				</div>
 			</router-link>
 		</div>

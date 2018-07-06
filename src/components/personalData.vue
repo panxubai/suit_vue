@@ -34,13 +34,13 @@
 				<p>性别</p>
 				<div class="genderMan" v-bind:class="genderIndex == 1?'active_color':''" data-index='1' @click='genderTap'>
 
-					<img v-if="genderIndex == 1" data-index='1' src='https://www.suitius.com/image/resources/questionnaire/ic_boy2.png' />
-					<img v-else data-index='1' src='https://www.suitius.com/image/resources/questionnaire/ic_boy1.png' />
+					<img v-if="genderIndex == 1" data-index='1' src='../assets/resources/questionnaire/ic_boy2.png' />
+					<img v-else data-index='1' src='../assets/resources/questionnaire/ic_boy1.png' />
 					<a data-index='1'>男</a>
 				</div>
 				<div class="genderWoman" v-bind:class="genderIndex == 0?'active_color':''" data-index='0' @click='genderTap'>
-					<img v-if="genderIndex == 0" data-index='0' src='https://www.suitius.com/image/resources/questionnaire/ic_boy4.png' @click='genderTap' />
-					<img v-else data-index='0' src='https://www.suitius.com/image/resources/questionnaire/ic_boy3.png' />
+					<img v-if="genderIndex == 0" data-index='0' src='../assets/resources/questionnaire/ic_boy4.png' @click='genderTap' />
+					<img v-else data-index='0' src='../assets/resources/questionnaire/ic_boy3.png' />
 					<a data-index='0'>女</a>
 				</div>
 			</div>
@@ -58,13 +58,13 @@
 			<div class='rests'>
 				<p>宠物</p>
 				<div class='restsYes' data-index='1' @click='restsTap'>
-					<img v-if="restsIndex == 1" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='1' />
-					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='1'>
+					<img v-if="restsIndex == 1" src='../assets/resources/questionnaire/ic_boy6.png' data-index='1' />
+					<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='1'>
 					<a data-index='1'>有</a>
 				</div>
 				<div class='restsNo' data-index='0' @click='restsTap'>
-					<img v-if="restsIndex == 0" src='https://www.suitius.com/image/resources/questionnaire/ic_boy6.png' data-index='0' />
-					<img v-else src='https://www.suitius.com/image/resources/questionnaire/ic_boy5.png' data-index='0'>
+					<img v-if="restsIndex == 0" src='../assets/resources/questionnaire/ic_boy6.png' data-index='0' />
+					<img v-else src='../assets/resources/questionnaire/ic_boy5.png' data-index='0'>
 					<a data-index='0'>无</a>
 				</div>
 

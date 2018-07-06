@@ -56,10 +56,10 @@
 			<div class='plMain' v-show="commentShow">
 				<div class='comment' @click="commentTap">写评论</div>
 				<div class='tapComment'>
-					<img src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony25.png' @click="commentTapScroll"/>
+					<img src='../assets/resources/homeDetail/ic_suite_balcony25.png' @click="commentTapScroll"/>
 				</div>
 				<a>22</a>
-				<div class="buttons"><img src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony26.png' /></div>
+				<div class="buttons"><img src='../assets/resources/homeDetail/ic_suite_balcony26.png' /></div>
 			</div>
 
 			<!-- 点击评论之后 -->

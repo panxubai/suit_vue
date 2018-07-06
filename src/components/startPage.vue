@@ -34,11 +34,12 @@
 		margin-top: 5.4rem;
 		width: 100%;
 		text-align: center;
+		font-size: 0;
 	}
 	.startMain .tartTop{
 		width: 3.3rem;
 		height: 0.88rem;
-		margin: 0 auto;
+		margin: 0.15rem auto;
 	}
 	.startMain .tartTop img{
 		width: 0.88rem;
@@ -52,9 +53,10 @@
 
 	}
 	.startMain p{
+		width: 100%;
 		text-align: center;
 		font-size: 0.24rem;
 		color: #999999;
-		margin-top: 0.17rem;
+		margin-top: 0.3rem;
 	}
 </style>

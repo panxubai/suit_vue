@@ -16,14 +16,14 @@
 				<div class='rightMain'>
 					<p>好日子大家园</p>
 					<div class='nameImgPic'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png'>
+						<img src='../assets/resources/ic_list_sign.png'>
 						<span>潘旭白</span>
 						<b>60000<a>元/月</a></b>
 
 					</div>
 					<h6>三室一厅㎡</h6>
 					<div class='addessSum'>
-						<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+						<img src='../assets/resources/ic_list_sign.png' />
 						<span>距离江湾体育场3km</span>
 					</div>
 				</div>
@@ -34,7 +34,7 @@
 			<div class='visitMain' :style="{ 'height': refuseShow ? '3.3rem' : '2rem' }">
 				<p>到访时间</p>
 				<div class='timeEnd'>
-					<img src='https://www.suitius.com/image/resources/homeDetail/ic_suite_balcony20.png' />
+					<img src='../assets/resources/homeDetail/ic_suite_balcony20.png' />
 					<b>{{dataAr&nbsp;&nbsp; rr.access_</b>
 					<!--<div class='consent'>已同意</div>-->
 					<div class='pending'>待处理</div>
@@ -68,13 +68,13 @@
 							</div>
 						</div>
 						<div class='headPortrait'>
-							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+							<img src='../assets/resources/ic_list_sign.png' />
 						</div>
 					</div>
 					<!-- 其他人的聊天 -->
 					<div class='otherId commons'>
 						<div class='headPortrait'>
-							<img src='https://www.suitius.com/image/resources/ic_list_sign.png' />
+							<img src='../assets/resources/ic_list_sign.png' />
 						</div>
 						<div class='content'>
 							<b>.name}}</b>
@@ -99,7 +99,7 @@
 		<div class='tipsWindown' v-show="questionShow" @click='hidenTipTap'></div>
 		<div class='expectationss' v-show="questionShow">
 			<p>请选择拒绝原因</p>
-			<img class='chahao' src='https://www.suitius.com/image/resources/homeDetail/ic_pop_close.png' @click='hidenTipTap' />
+			<img class='chahao' src='../assets/resources/homeDetail/ic_pop_close.png' @click='hidenTipTap' />
 			<div class="selectss" :class="showNumber==1?'activeSelect':''" @click='elsectTap(1)'>
 				A.<b>房子已经租出去了</b>
 			</div>
@@ -570,6 +570,7 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
+		background: #fff;
 	}
 	
 	.inputBox .inputWidth {

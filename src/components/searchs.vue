@@ -14,7 +14,7 @@
 				<div class='searchBoxSum'>
 					<img class="ic_search" src="../assets/ic_search.png" />
 					<input placeholder-style="color:#999999" placeholder="商圈/行政区/小区" v-on:input="searchEndChange" v-model="inputVal" />
-					<img class="ic_search_closs" src='https://www.suitius.com/image/resources/ic_search_closs.png' @click="eliminateTap"></img>
+					<img class="ic_search_closs" src='../assets/resources/ic_search_closs.png' @click="eliminateTap"></img>
 				</div>
 			</div>
 			<!--<div class='noHome' style="display:{{showList?'block':'none'}}">
@@ -30,7 +30,7 @@
 				</div>
 				<div v-show="historySearch.length != 0" class='hotSearch historySearch'>
 					<p>历史搜索
-						<img src='https://www.suitius.com/image/resources/ic_search_delete.png' @click="removeHistorySearch"></img>
+						<img src='../assets/resources/ic_search_delete.png' @click="removeHistorySearch"></img>
 					</p>
 					<span v-for="item in historySearch" :data-type="item.type" :data-text="item.text" @click="bindtapa">{{item.text}}</span>
 				</div>

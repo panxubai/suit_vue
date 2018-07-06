@@ -27,37 +27,37 @@
 			<div class='mine_list' @click="personalTap">
 				<img class='icon' src='../assets/image/ic_landlord_bag2.png' />
 				<b>个人资料</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 			<div class='mine_list' @click="iLoveIs">
 				<img class='icon' src='../assets/image/me_ic_heart.png' />
 				<b>我喜欢的</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
 				<img class='icon' src='../assets/image/me_ic_hetong.png' />
 				<b>我的合同</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
 				<img class='icon' src='../assets/image/me_ic_hetong.png' />
 				<b>合同管理</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
 				<img class='icon' src='../assets/image/me_ic_shouyi.png' />
 				<b>收益管理</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
 				<img class='icon' src='../assets/image/me_ic_zhangdan.png' />
 				<b>账单支付</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 			<div class='mine_list'>
 				<img class='icon' src='../assets/image/ic_set_about1.png' />
 				<b>家政服务</b>
-				<img class='arrows' src='https://www.suitius.com/image/resources/ic_more.png' />
+				<img class='arrows' src='../assets/resources/ic_more.png' />
 			</div>
 
 		</div>
