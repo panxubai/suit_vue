@@ -239,6 +239,10 @@
 		right: 0;
 		bottom: 0;
 		overflow-y: scroll;
+		display: flex;
+		display:-webkit-box;
+		display: -webkit-flex;
+		flex-direction:column;
 	}
 	
 	.headerS {
@@ -395,7 +399,7 @@
 	
 	.chatBoxes {
 		width: 6.9rem;
-		height: 6rem;
+		flex: 1;
 		margin: 0 auto;
 		overflow-y: auto;
 	}

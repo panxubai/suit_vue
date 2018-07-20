@@ -163,8 +163,7 @@
 	.mint-cell-swipe-button {
 		background: red !important;
 		font-size: 0.32rem;
-		text-align: center;
-		padding: 0 0.6rem;
+		padding: 0 0.5rem;
 		line-height: 2.12rem;
 	}
 	

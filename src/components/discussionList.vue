@@ -46,6 +46,39 @@
 				</div>
 			</mt-cell-swipe>
 		</div>
+		<div class='routeList'>
+			<mt-cell-swipe :right="[  
+                {  
+                    content: '退出',  
+                    style: { background: '#ff7900', color: '#fff',},  
+                    handler: () => deleteSection(1)  
+                }  
+            ]">
+				<div class='routeTop' @click="routerLink">
+					<div v-if="itemArr.length == 2" class="imgsum imgsumtwo">
+						<img v-for="item in itemArr" :src='item' />
+					</div>
+					<div v-if="itemArr.length == 3" class='imgsum imgsumthree'>
+						<img v-for="item in itemArr" :src='item' />
+					</div>
+					<div v-if="itemArr.length == 4" class='imgsum'>
+						<img v-for="item in itemArr" :src='item' />
+					</div>
+					<div v-if="itemArr.length == 1" class='imgsum'>
+						<img v-for="item in itemArr" :src='item' />
+					</div>
+
+					<div class='routeRight'>
+						<p>{{item.hou</p>
+						<!-- <span wx:if="{{item.no_read != 0}}">{{item.</span>-->
+						<div class='routeTime'>
+							<h6>use_info.area}} ㎡</h6>
+							<b>3000<a>元/月</a></b>
+						</div>
+					</div>
+				</div>
+			</mt-cell-swipe>
+		</div>
 		<transition name="router-slid" mode="out-in">
 			<router-view></router-view>
 		</transition>

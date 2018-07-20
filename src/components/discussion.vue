@@ -122,6 +122,10 @@
 		right: 0;
 		bottom: 0;
 		overflow-y:scroll;
+		display: flex;
+		display:-webkit-box;
+		display: -webkit-flex;
+		flex-direction:column;
 	}
 	.headerS{
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.10);
@@ -226,7 +230,7 @@
 	/* 自己发送的消息 */
 .chatBoxes{
   width: 6.90rem;
-  height: 8rem;
+  	flex: 1;
   margin: 0 auto;
   overflow-y:auto ;
 }

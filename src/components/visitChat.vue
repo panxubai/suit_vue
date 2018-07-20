@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<!--------------------->
-		<div class='chatBoxes' :style="{ 'height': refuseShow ? '4.5rem' : '5.8rem' }">
+		<div class='chatBoxes'>
 			<div class="scroll_y">
 				<!-- 本人的聊天 -->
 				<div>
@@ -183,6 +183,10 @@
 		right: 0;
 		bottom: 0;
 		overflow-y: scroll;
+		display: flex;
+		display:-webkit-box;
+		display: -webkit-flex;
+		flex-direction:column;
 	}
 	
 	.headerS {
@@ -431,6 +435,7 @@
 	
 	.chatBoxes {
 		width: 6.9rem;
+			flex: 1;
 		margin: 0 auto;
 		overflow-y: auto;
 	}
